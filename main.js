@@ -1,10 +1,94 @@
 /* ================================================
-   PORTFOLIO — main.js  v4
-   Custom cursor · Sound effects · Accordions · Counters
+   PORTFOLIO — main.js  v5
+   Ultra-responsive Click Sounds · Custom Cursor · FAQ · Counters
    ================================================ */
 
 (function () {
   'use strict';
+
+  // ─── AUDIO ENGINE (LOUD & CRISP ON ALL CLICKS) ──
+  let audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) {
+        audioCtx = new AudioContextClass();
+      }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playClickSound(soundType) {
+    initAudio();
+    if (!audioCtx) return;
+
+    try {
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (soundType === 'button') {
+        // Crisp futuristic double-tone pop for buttons & CTAs
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.exponentialRampToValueAtTime(400, now + 0.08);
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.09);
+      } else if (soundType === 'nav') {
+        // High crisp chirp for navbar links
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(650, now);
+        osc.frequency.exponentialRampToValueAtTime(950, now + 0.07);
+        gain.gain.setValueAtTime(0.28, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (soundType === 'accordion') {
+        // Smooth swell for FAQ dropdowns
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(350, now);
+        osc.frequency.exponentialRampToValueAtTime(700, now + 0.1);
+        gain.gain.setValueAtTime(0.30, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+        osc.start(now);
+        osc.stop(now + 0.11);
+      } else {
+        // Universal crisp UI click sound for ANY element clicked
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, now);
+        osc.frequency.exponentialRampToValueAtTime(300, now + 0.06);
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+        osc.start(now);
+        osc.stop(now + 0.07);
+      }
+    } catch (e) {}
+  }
+
+  // Trigger sound on every single pointerdown & click anywhere on screen
+  window.addEventListener('pointerdown', (e) => {
+    initAudio();
+    const target = e.target;
+    if (target.closest('.faq-question')) {
+      playClickSound('accordion');
+    } else if (target.closest('button, .btn, .nav-cta, input[type="submit"]')) {
+      playClickSound('button');
+    } else if (target.closest('.navbar a, .nav-mobile a')) {
+      playClickSound('nav');
+    } else if (target.closest('a, .card, .channel-card, .skill-pill, .service-card')) {
+      playClickSound('button');
+    } else {
+      playClickSound('click');
+    }
+  }, { capture: true, passive: true });
 
   // ─── CUSTOM CURSOR ───────────────────────────
   const cursorDot  = document.getElementById('cursor-dot');
@@ -24,8 +108,8 @@
 
   function animateRing() {
     if (cursorRing) {
-      ringX += (mouseX - ringX) * 0.14;
-      ringY += (mouseY - ringY) * 0.14;
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
       cursorRing.style.left = ringX + 'px';
       cursorRing.style.top  = ringY + 'px';
     }
@@ -33,23 +117,20 @@
   }
   animateRing();
 
-  // Hover state
-  function attachHoverListeners() {
-    const interactives = 'a, button, input, textarea, select, .card, .service-card, .skill-pill, .channel-card, .faq-question, .workflow-step';
-    document.querySelectorAll(interactives).forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        if (cursorDot)  cursorDot.classList.add('hovering');
-        if (cursorRing) cursorRing.classList.add('hovering');
-      });
-      el.addEventListener('mouseleave', () => {
-        if (cursorDot)  cursorDot.classList.remove('hovering');
-        if (cursorRing) cursorRing.classList.remove('hovering');
-      });
+  // Hover states on interactive items
+  const interactives = 'a, button, input, textarea, select, .card, .service-card, .skill-pill, .channel-card, .faq-question, .workflow-step, .stat-item';
+  document.querySelectorAll(interactives).forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (cursorDot)  cursorDot.classList.add('hovering');
+      if (cursorRing) cursorRing.classList.add('hovering');
     });
-  }
-  attachHoverListeners();
+    el.addEventListener('mouseleave', () => {
+      if (cursorDot)  cursorDot.classList.remove('hovering');
+      if (cursorRing) cursorRing.classList.remove('hovering');
+    });
+  });
 
-  // Click state
+  // Press down effect
   document.addEventListener('mousedown', () => {
     if (cursorDot)  cursorDot.classList.add('clicking');
     if (cursorRing) cursorRing.classList.add('clicking');
@@ -81,80 +162,14 @@
     ripple.addEventListener('animationend', () => ripple.remove());
   });
 
-  // ─── WEB AUDIO SOUND EFFECTS ──────────────────
-  let audioCtx = null;
-  let soundEnabled = true;
-
-  function getAudioCtx() {
-    if (!audioCtx) {
-      try {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      } catch (e) { soundEnabled = false; }
-    }
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    return audioCtx;
-  }
-
-  function playSound(type) {
-    if (!soundEnabled) return;
-    try {
-      const ctx = getAudioCtx();
-      if (!ctx) return;
-
-      const osc    = ctx.createOscillator();
-      const gain   = ctx.createGain();
-      const filter = ctx.createBiquadFilter();
-
-      filter.type = 'lowpass';
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(ctx.destination);
-
-      const now = ctx.currentTime;
-
-      const sounds = {
-        nav:       { freq: 520, freqEnd: 320, dur: 0.07, vol: 0.10, filterFreq: 2000 },
-        button:    { freq: 780, freqEnd: 420, dur: 0.09, vol: 0.15, filterFreq: 3200 },
-        link:      { freq: 500, freqEnd: 280, dur: 0.07, vol: 0.09, filterFreq: 2000 },
-        accordion: { freq: 440, freqEnd: 660, dur: 0.08, vol: 0.12, filterFreq: 2500 },
-        click:     { freq: 400, freqEnd: 220, dur: 0.05, vol: 0.08, filterFreq: 1600 }
-      };
-
-      const s = sounds[type] || sounds.click;
-      filter.frequency.value = s.filterFreq;
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(s.freq, now);
-      osc.frequency.exponentialRampToValueAtTime(s.freqEnd, now + s.dur);
-      gain.gain.setValueAtTime(s.vol, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + s.dur);
-      osc.start(now);
-      osc.stop(now + s.dur + 0.01);
-    } catch (e) {}
-  }
-
-  document.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target.closest('.faq-question')) { playSound('accordion'); }
-    else if (target.closest('button, .btn')) { playSound('button'); }
-    else if (target.closest('.navbar a, .nav-mobile a')) { playSound('nav'); }
-    else if (target.closest('a')) { playSound('link'); }
-    else { playSound('click'); }
-  }, { capture: true });
-
   // ─── FAQ ACCORDION LOGIC ──────────────────────
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const wasOpen = item.classList.contains('open');
-      
-      // Close other accordion items
       document.querySelectorAll('.faq-item').forEach(other => {
         if (other !== item) other.classList.remove('open');
       });
-
-      // Toggle current
       item.classList.toggle('open', !wasOpen);
     });
   });
@@ -212,9 +227,9 @@
   const typedEl = document.querySelector('.typed-text');
   if (typedEl) {
     const words = [
-      'Software Developer',
+      'Web Developer',
       'Backend Engineer',
-      'Web App Specialist',
+      'Software Developer',
       'IoT & AI Builder',
     ];
     let wi = 0, ci = 0, deleting = false;
@@ -261,7 +276,6 @@
       const orig = btn.innerHTML;
       btn.innerHTML = 'Sending message…';
       btn.disabled = true;
-      playSound('button');
       setTimeout(() => {
         form.reset();
         btn.innerHTML = orig;
@@ -270,7 +284,7 @@
           successMsg.style.display = 'block';
           setTimeout(() => successMsg.style.display = 'none', 6000);
         }
-      }, 1400);
+      }, 1200);
     });
   }
 
