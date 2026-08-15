@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Goutham Kumar SK</title>
+  <meta name="description" content="Projects by Goutham Kumar SK — Library Management System, Restaurant Web App, and IoT AI Chatbot for Bluetooth device control." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Goutham Kumar SK — Home">
+        <div class="nav-logo-mark">GK</div>
+        <span class="nav-logo-text">Goutham <em>Kumar</em></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <header class="page-hero" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="page-hero-label">My Work</p>
+        <h1 id="projects-heading">Projects</h1>
+        <p>Real-world applications I've built — from web systems to hardware-integrated IoT solutions.</p>
+      </div>
+    </header>
+    <div class="page-divider container"></div>
+
+    <!-- PROJECTS -->
+    <section class="section" style="padding-top:0" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <!-- ══════════════ PROJECT 1 ══════════════ -->
+        <article class="card fade-up" id="proj-1" style="margin-bottom:var(--s3);">
+          <div style="display:grid;grid-template-columns:220px 1fr;gap:var(--s4);align-items:start;">
+            <div class="project-thumb thumb-library" style="height:180px;margin:0;border-radius:var(--radius-s);" aria-hidden="true">📚</div>
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+                <div class="project-num">Project 01</div>
+                <span class="badge badge-live">Completed</span>
+              </div>
+              <h2 style="font-size:1.4rem;margin-bottom:.6rem;">Library Management System</h2>
+              <p style="margin-bottom:var(--s3);">
+                A comprehensive web application designed to digitize and streamline library operations.
+                The system handles book cataloguing with search and filter, member registration and management,
+                borrowing and return workflows with due-date tracking, fine calculation, and an admin
+                dashboard for reporting. The backend is powered by a relational SQL database for fast,
+                reliable data management.
+              </p>
+
+              <!-- Key features -->
+              <div style="margin-bottom:var(--s3);">
+                <strong style="font-size:.8rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">Key Features</strong>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Book catalogue &amp; search
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Member management
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Borrow &amp; return tracking
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Fine &amp; due-date system
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Admin dashboard
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> SQL-powered backend
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tags" style="margin-bottom:var(--s3);">
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Web Application</span>
+                <span class="tag">Database Design</span>
+              </div>
+
+              <div style="display:flex;gap:var(--s2);">
+                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" id="proj-1-github" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;padding:10px 20px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══════════════ PROJECT 2 ══════════════ -->
+        <article class="card fade-up" id="proj-2" style="margin-bottom:var(--s3);">
+          <div style="display:grid;grid-template-columns:220px 1fr;gap:var(--s4);align-items:start;">
+            <div class="project-thumb thumb-restaurant" style="height:180px;margin:0;border-radius:var(--radius-s);" aria-hidden="true">🍽️</div>
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+                <div class="project-num">Project 02</div>
+                <span class="badge badge-live">Completed</span>
+              </div>
+              <h2 style="font-size:1.4rem;margin-bottom:.6rem;">Restaurant Web Application</h2>
+              <p style="margin-bottom:var(--s3);">
+                A full-featured restaurant web application that provides a complete digital experience for
+                both customers and restaurant staff. Customers can browse a dynamic menu, make table
+                reservations, and place orders online. The restaurant staff side includes order management,
+                table status tracking, and menu updates — all backed by a robust SQL database.
+              </p>
+
+              <div style="margin-bottom:var(--s3);">
+                <strong style="font-size:.8rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">Key Features</strong>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Interactive menu browsing
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Table reservation system
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Online order management
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> SQL database backend
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Admin panel for staff
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> React-powered UI
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tags" style="margin-bottom:var(--s3);">
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">React</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Web Application</span>
+              </div>
+
+              <div style="display:flex;gap:var(--s2);">
+                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" id="proj-2-github" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;padding:10px 20px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══════════════ PROJECT 3 ══════════════ -->
+        <article class="card fade-up" id="proj-3" style="margin-bottom:var(--s3);">
+          <div style="display:grid;grid-template-columns:220px 1fr;gap:var(--s4);align-items:start;">
+            <div class="project-thumb thumb-iot" style="height:180px;margin:0;border-radius:var(--radius-s);" aria-hidden="true">🤖</div>
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+                <div class="project-num">Project 03</div>
+                <span class="badge badge-iot">IoT · AI</span>
+              </div>
+              <h2 style="font-size:1.4rem;margin-bottom:.6rem;">IoT AI Chatbot for Bluetooth Device Control</h2>
+              <p style="margin-bottom:var(--s3);">
+                An innovative project that merges artificial intelligence with hardware. An AI-powered
+                chatbot interprets natural language commands and translates them into Bluetooth signals
+                to control IoT devices. The firmware layer (C/C++) handles device communication and
+                hardware protocols, while Python manages the AI/NLP pipeline and Bluetooth stack —
+                creating a seamless voice/text-to-hardware bridge.
+              </p>
+
+              <div style="margin-bottom:var(--s3);">
+                <strong style="font-size:.8rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">Key Features</strong>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Natural language processing
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Bluetooth device control
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> AI chatbot interface
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> C/C++ firmware layer
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Python AI/NLP backend
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--text-muted);">
+                    <span style="color:var(--green);font-weight:700;">✓</span> Real hardware integration
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tags" style="margin-bottom:var(--s3);">
+                <span class="tag">Python</span>
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">Bluetooth</span>
+                <span class="tag">IoT</span>
+                <span class="tag">AI / NLP</span>
+              </div>
+
+              <div style="display:flex;gap:var(--s2);">
+                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" id="proj-3-github" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;padding:10px 20px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTA -->
+        <div class="card fade-up" style="text-align:center;padding:2.5rem;margin-top:1rem;">
+          <div class="section-tag" style="justify-content:center;">Let's collaborate</div>
+          <h2 style="margin-bottom:.75rem;font-size:1.6rem;">Have a project in mind?</h2>
+          <p style="max-width:400px;margin:0 auto 1.5rem;">
+            I'm open to new projects and would love to build something meaningful together.
+          </p>
+          <a href="contact.html" class="btn btn-primary" id="projects-cta">Get In Touch</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-left">
+        <div class="nav-logo-mark" aria-hidden="true">GK</div>
+        <p class="footer-copy">© <span class="footer-year">2024</span> <strong>Goutham Kumar SK</strong>. All rights reserved.</p>
+      </div>
+      <div class="socials" aria-label="Social links">
+        <a href="https://github.com/Gouthamdc2007" class="social-btn" target="_blank" rel="noopener noreferrer" id="footer-github" aria-label="GitHub" title="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/goutham-kumar-s-k-790884340/" class="social-btn" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:gowtham57845@gmail.com" class="social-btn" id="footer-email" aria-label="Email" title="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
