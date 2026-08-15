@@ -1,6 +1,6 @@
 /* ================================================
-   PORTFOLIO — main.js  v3
-   Custom cursor · Click sounds · Animations
+   PORTFOLIO — main.js  v4
+   Custom cursor · Sound effects · Accordions · Counters
    ================================================ */
 
 (function () {
@@ -12,18 +12,20 @@
 
   let mouseX = 0, mouseY = 0;
   let ringX  = 0, ringY  = 0;
-  let isHovering = false;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    if (cursorDot)  { cursorDot.style.left  = mouseX + 'px'; cursorDot.style.top  = mouseY + 'px'; }
+    if (cursorDot) {
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top  = mouseY + 'px';
+    }
   }, { passive: true });
 
   function animateRing() {
     if (cursorRing) {
-      ringX += (mouseX - ringX) * 0.13;
-      ringY += (mouseY - ringY) * 0.13;
+      ringX += (mouseX - ringX) * 0.14;
+      ringY += (mouseY - ringY) * 0.14;
       cursorRing.style.left = ringX + 'px';
       cursorRing.style.top  = ringY + 'px';
     }
@@ -31,22 +33,23 @@
   }
   animateRing();
 
-  // Hover state on interactive elements
-  const interactives = 'a, button, input, textarea, .card, .skill-pill, .channel-card';
-  document.querySelectorAll(interactives).forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      isHovering = true;
-      if (cursorDot)  cursorDot.classList.add('hovering');
-      if (cursorRing) cursorRing.classList.add('hovering');
+  // Hover state
+  function attachHoverListeners() {
+    const interactives = 'a, button, input, textarea, select, .card, .service-card, .skill-pill, .channel-card, .faq-question, .workflow-step';
+    document.querySelectorAll(interactives).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        if (cursorDot)  cursorDot.classList.add('hovering');
+        if (cursorRing) cursorRing.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        if (cursorDot)  cursorDot.classList.remove('hovering');
+        if (cursorRing) cursorRing.classList.remove('hovering');
+      });
     });
-    el.addEventListener('mouseleave', () => {
-      isHovering = false;
-      if (cursorDot)  cursorDot.classList.remove('hovering');
-      if (cursorRing) cursorRing.classList.remove('hovering');
-    });
-  });
+  }
+  attachHoverListeners();
 
-  // Click press effect
+  // Click state
   document.addEventListener('mousedown', () => {
     if (cursorDot)  cursorDot.classList.add('clicking');
     if (cursorRing) cursorRing.classList.add('clicking');
@@ -56,7 +59,6 @@
     if (cursorRing) cursorRing.classList.remove('clicking');
   });
 
-  // Hide cursor when leaving window
   document.addEventListener('mouseleave', () => {
     if (cursorDot)  cursorDot.style.opacity = '0';
     if (cursorRing) cursorRing.style.opacity = '0';
@@ -66,7 +68,7 @@
     if (cursorRing) cursorRing.style.opacity = '1';
   });
 
-  // ─── CLICK RIPPLE EFFECT ─────────────────────
+  // ─── CLICK RIPPLE ─────────────────────────────
   document.addEventListener('click', (e) => {
     const ripple = document.createElement('div');
     ripple.className = 'ripple';
@@ -79,7 +81,7 @@
     ripple.addEventListener('animationend', () => ripple.remove());
   });
 
-  // ─── WEB AUDIO — SOUND EFFECTS ───────────────
+  // ─── WEB AUDIO SOUND EFFECTS ──────────────────
   let audioCtx = null;
   let soundEnabled = true;
 
@@ -89,7 +91,6 @@
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       } catch (e) { soundEnabled = false; }
     }
-    // Resume if suspended (required by browser policy)
     if (audioCtx && audioCtx.state === 'suspended') {
       audioCtx.resume();
     }
@@ -114,41 +115,16 @@
       const now = ctx.currentTime;
 
       const sounds = {
-        nav: {
-          type: 'sine',
-          freq: 520, freqEnd: 320,
-          dur: 0.07,
-          vol: 0.12, filterFreq: 2000
-        },
-        button: {
-          type: 'sine',
-          freq: 740, freqEnd: 380,
-          dur: 0.09,
-          vol: 0.16, filterFreq: 3000
-        },
-        link: {
-          type: 'sine',
-          freq: 480, freqEnd: 260,
-          dur: 0.07,
-          vol: 0.10, filterFreq: 2000
-        },
-        click: {
-          type: 'sine',
-          freq: 380, freqEnd: 200,
-          dur: 0.06,
-          vol: 0.08, filterFreq: 1500
-        },
-        hover_tick: {
-          type: 'sine',
-          freq: 900, freqEnd: 700,
-          dur: 0.03,
-          vol: 0.05, filterFreq: 4000
-        }
+        nav:       { freq: 520, freqEnd: 320, dur: 0.07, vol: 0.10, filterFreq: 2000 },
+        button:    { freq: 780, freqEnd: 420, dur: 0.09, vol: 0.15, filterFreq: 3200 },
+        link:      { freq: 500, freqEnd: 280, dur: 0.07, vol: 0.09, filterFreq: 2000 },
+        accordion: { freq: 440, freqEnd: 660, dur: 0.08, vol: 0.12, filterFreq: 2500 },
+        click:     { freq: 400, freqEnd: 220, dur: 0.05, vol: 0.08, filterFreq: 1600 }
       };
 
       const s = sounds[type] || sounds.click;
       filter.frequency.value = s.filterFreq;
-      osc.type = s.type;
+      osc.type = 'sine';
       osc.frequency.setValueAtTime(s.freq, now);
       osc.frequency.exponentialRampToValueAtTime(s.freqEnd, now + s.dur);
       gain.gain.setValueAtTime(s.vol, now);
@@ -158,27 +134,39 @@
     } catch (e) {}
   }
 
-  // Wire up sounds to clicks
   document.addEventListener('click', (e) => {
     const target = e.target;
-    const btn    = target.closest('button, .btn');
-    const navA   = target.closest('.navbar a, .nav-mobile a');
-    const link   = target.closest('a');
-
-    if (btn)  { playSound('button'); }
-    else if (navA) { playSound('nav'); }
-    else if (link) { playSound('link'); }
-    else           { playSound('click'); }
+    if (target.closest('.faq-question')) { playSound('accordion'); }
+    else if (target.closest('button, .btn')) { playSound('button'); }
+    else if (target.closest('.navbar a, .nav-mobile a')) { playSound('nav'); }
+    else if (target.closest('a')) { playSound('link'); }
+    else { playSound('click'); }
   }, { capture: true });
 
-  // ─── NAVBAR ───────────────────────────────────
+  // ─── FAQ ACCORDION LOGIC ──────────────────────
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      
+      // Close other accordion items
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) other.classList.remove('open');
+      });
+
+      // Toggle current
+      item.classList.toggle('open', !wasOpen);
+    });
+  });
+
+  // ─── NAVBAR SCROLL & MOBILE ───────────────────
   const navbar     = document.querySelector('.navbar');
   const hamburger  = document.querySelector('.nav-hamburger');
   const mobileMenu = document.querySelector('.nav-mobile');
 
   if (navbar) {
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 8);
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
   }
 
@@ -208,7 +196,7 @@
     }
   });
 
-  // ─── SCROLL FADE ANIMATIONS ───────────────────
+  // ─── SCROLL OBSERVER (FADE-UP) ────────────────
   const fadeObserver = new IntersectionObserver(
     entries => entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -216,7 +204,7 @@
         fadeObserver.unobserve(entry.target);
       }
     }),
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
   );
   document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
@@ -225,9 +213,9 @@
   if (typedEl) {
     const words = [
       'Software Developer',
-      'Web App Developer',
-      'Backend Developer',
-      'IoT Enthusiast',
+      'Backend Engineer',
+      'Web App Specialist',
+      'IoT & AI Builder',
     ];
     let wi = 0, ci = 0, deleting = false;
     function tick() {
@@ -236,61 +224,14 @@
       deleting ? ci-- : ci++;
       if (!deleting && ci === word.length) { deleting = true; setTimeout(tick, 1800); return; }
       if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
-      setTimeout(tick, deleting ? 50 : 80);
+      setTimeout(tick, deleting ? 45 : 75);
     }
-    setTimeout(tick, 900);
+    setTimeout(tick, 800);
   }
 
-  // ─── HERO ENTRANCE ────────────────────────────
-  const heroChildren = document.querySelectorAll('.hero-content > *');
-  if (heroChildren.length) {
-    heroChildren.forEach((el, i) => {
-      el.style.cssText = `opacity:0;transform:translateY(22px);
-        transition:opacity .65s cubic-bezier(.4,0,.2,1) ${i * 0.09}s,
-                   transform .65s cubic-bezier(.4,0,.2,1) ${i * 0.09}s`;
-    });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      heroChildren.forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
-    }));
-  }
-
-  // Hero photo entrance
-  const heroPhoto = document.querySelector('.hero-photo-wrap');
-  if (heroPhoto) {
-    heroPhoto.style.cssText = `opacity:0;transform:scale(0.94) translateY(20px);
-      transition:opacity .9s cubic-bezier(.4,0,.2,1) .3s, transform .9s cubic-bezier(.4,0,.2,1) .3s`;
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      heroPhoto.style.opacity = '1';
-      heroPhoto.style.transform = 'scale(1) translateY(0)';
-    }));
-  }
-
-  // ─── CONTACT FORM ─────────────────────────────
-  const form       = document.getElementById('contact-form');
-  const successMsg = document.getElementById('form-success');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn  = form.querySelector('.form-btn');
-      const orig = btn.innerHTML;
-      btn.innerHTML = 'Sending…';
-      btn.disabled = true;
-      playSound('button');
-      setTimeout(() => {
-        form.reset();
-        btn.innerHTML = orig;
-        btn.disabled = false;
-        if (successMsg) {
-          successMsg.style.display = 'block';
-          setTimeout(() => successMsg.style.display = 'none', 5000);
-        }
-      }, 1500);
-    });
-  }
-
-  // ─── ANIMATED COUNTERS ────────────────────────
+  // ─── ANIMATED STAT COUNTERS ───────────────────
   function animateCounter(el, target, suffix) {
-    const dur = 1400, start = performance.now();
+    const dur = 1500, start = performance.now();
     function step(now) {
       const p    = Math.min((now - start) / dur, 1);
       const ease = 1 - Math.pow(1 - p, 3);
@@ -307,14 +248,37 @@
         counterObs.unobserve(el);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
   document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+  // ─── CONTACT FORM ─────────────────────────────
+  const form       = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn  = form.querySelector('.form-btn');
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Sending message…';
+      btn.disabled = true;
+      playSound('button');
+      setTimeout(() => {
+        form.reset();
+        btn.innerHTML = orig;
+        btn.disabled = false;
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          setTimeout(() => successMsg.style.display = 'none', 6000);
+        }
+      }, 1400);
+    });
+  }
 
   // ─── BACK TO TOP ──────────────────────────────
   const backBtn = document.getElementById('back-to-top');
   if (backBtn) {
     window.addEventListener('scroll', () => {
-      backBtn.classList.toggle('visible', window.scrollY > 400);
+      backBtn.classList.toggle('visible', window.scrollY > 350);
     }, { passive: true });
     backBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Goutham Kumar SK — Software Developer</title>
-  <meta name="description" content="Goutham Kumar SK — Software Developer specializing in Web Applications, Backend Engineering, and IoT." />
+  <meta name="description" content="Goutham Kumar SK — Software Developer specializing in Web Application Development, Backend Architecture, and IoT Systems." />
   <meta property="og:title" content="Goutham Kumar SK — Software Developer" />
   <meta property="og:description" content="Software Developer · Web Apps · Backend · IoT" />
   <meta property="og:type" content="website" />
@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- AMBIENT BACKGROUND GLOWS -->
+  <div class="bg-ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="bg-ambient-glow glow-3" aria-hidden="true"></div>
 
   <!-- CUSTOM CURSOR -->
   <div id="cursor-dot"  aria-hidden="true"></div>
@@ -30,7 +35,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -47,30 +52,33 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- ════════════════ HERO ════════════════ -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-layout">
 
-          <!-- LEFT: text -->
+          <!-- Left Column -->
           <div class="hero-content">
-            <div class="hero-badge">Available for opportunities</div>
+            <div class="hero-badge">Available for Opportunities</div>
 
-            <p class="hero-greeting">Hello, I'm</p>
+            <p class="hero-greeting">Hi there, I'm</p>
             <h1 id="hero-heading" class="hero-name">
-              Goutham<br/>Kumar <span class="name-accent">SK</span>
+              Goutham<br />Kumar <span class="gradient-text">SK</span>
             </h1>
 
-            <p class="hero-role"><span class="typed-text"></span></p>
+            <p class="hero-role">
+              Specializing in <span class="typed-text"></span>
+            </p>
 
             <p class="hero-desc">
-              Building web applications and backend systems that are robust, scalable, and efficient.
-              From Library Systems to IoT AI chatbots — I love turning real-world problems into clean software.
+              I architect and build robust web applications, data-driven backend systems,
+              and IoT-integrated software. Passionate about writing clean, maintainable code
+              that solves real problems.
             </p>
 
             <div class="hero-actions">
               <a href="projects.html" class="btn btn-primary" id="hero-view-work">
-                View Projects
+                Explore Projects
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
               <a href="contact.html" class="btn btn-outline" id="hero-contact">Get In Touch</a>
@@ -78,21 +86,21 @@
 
             <div class="hero-meta">
               <span class="hero-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 India
               </span>
               <span class="hero-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                Web · Backend · IoT
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Web · Backend · SQL · IoT
               </span>
               <span class="hero-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Open to Full-time &amp; Freelance
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Open to Work
               </span>
             </div>
           </div>
 
-          <!-- RIGHT: profile photo -->
+          <!-- Right Column (Photo + Orbiting Rings + Floating Badges) -->
           <div class="hero-photo-side">
             <div class="hero-photo-wrap">
               <img
@@ -104,6 +112,11 @@
               <div class="photo-ring photo-ring-1" aria-hidden="true"></div>
               <div class="photo-ring photo-ring-2" aria-hidden="true"></div>
               <div class="photo-ring photo-ring-3" aria-hidden="true"></div>
+
+              <!-- Floating Tech Tags -->
+              <div class="floating-badge fb-1">⚡ Java &amp; Python</div>
+              <div class="floating-badge fb-2">🗄️ SQL Databases</div>
+              <div class="floating-badge fb-3">🤖 IoT AI Chatbot</div>
             </div>
           </div>
 
@@ -111,116 +124,386 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section class="section" id="featured" aria-labelledby="featured-heading">
-      <div class="container">
-        <div class="section-tag">My Work</div>
-        <h2 id="featured-heading" class="section-title">Projects I've Built</h2>
-        <p class="section-desc">Real projects — from full-stack web apps to IoT-powered systems — each solving a genuine problem.</p>
-
-        <div class="projects-grid">
-
-          <article class="card project-card fade-up" id="feat-proj-1">
-            <div class="project-thumb thumb-library" aria-hidden="true">📚</div>
-            <div class="project-num">01</div>
-            <div class="project-head">
-              <h3>Library Management System</h3>
-              <span class="badge badge-live">Completed</span>
-            </div>
-            <p>Full web application to manage library operations — books, members, borrowing, returns, and fines. Powered by SQL.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer" id="feat-p1-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </article>
-
-          <article class="card project-card fade-up" id="feat-proj-2">
-            <div class="project-thumb thumb-restaurant" aria-hidden="true">🍽️</div>
-            <div class="project-num">02</div>
-            <div class="project-head">
-              <h3>Restaurant Web Application</h3>
-              <span class="badge badge-live">Completed</span>
-            </div>
-            <p>Dynamic restaurant app — menu browsing, table reservations, order management — built with SQL backend and React UI.</p>
-            <div class="project-tags">
-              <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">React</span><span class="tag">CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer" id="feat-p2-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </article>
-
-          <article class="card project-card fade-up" id="feat-proj-3">
-            <div class="project-thumb thumb-iot" aria-hidden="true">🤖</div>
-            <div class="project-num">03</div>
-            <div class="project-head">
-              <h3>IoT AI Chatbot</h3>
-              <span class="badge badge-iot">IoT · AI</span>
-            </div>
-            <p>AI-powered chatbot that controls Bluetooth IoT devices using natural language — C/C++ firmware + Python AI backend.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">IoT</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer" id="feat-p3-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </article>
-
-        </div>
-
-        <div style="margin-top:2rem;text-align:center;">
-          <a href="projects.html" class="btn btn-outline" id="all-projects-btn">
-            See Full Project Details
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+    <!-- ════════════════ STATS BANNER ════════════════ -->
+    <section class="container" aria-label="Key statistics">
+      <div class="stats-banner fade-up">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-target="3" data-suffix="+">0+</div>
+            <div class="stat-label">Core Projects Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="7" data-suffix="">0</div>
+            <div class="stat-label">Tech Stack Languages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+            <div class="stat-label">Code Quality &amp; Focus</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="24" data-suffix="h">0h</div>
+            <div class="stat-label">Fast Response Time</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS STRIP -->
-    <section style="padding:0 0 4rem;" aria-label="Tech stack">
+    <!-- ════════════════ SERVICES / WHAT I DO ════════════════ -->
+    <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container">
-        <div class="section-tag">Tech Stack</div>
-        <h2 class="section-title" style="margin-bottom:1.5rem;">Languages &amp; Tools</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <span class="skill-pill">Java</span>
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">CSS</span>
-          <span class="skill-pill">React</span>
+        <div class="section-header">
+          <div class="section-tag">Capabilities</div>
+          <h2 id="services-heading" class="section-title">What I Specialize In</h2>
+          <p class="section-desc">From web architectures to physical hardware automation, here is how I create value with code.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🌐</div>
+            <h3>Full-Stack Web Apps</h3>
+            <p>Building responsive, accessible web applications with clean frontend interfaces in React and robust backend processing.</p>
+            <div class="service-tags">
+              <span class="service-tag-item">React</span>
+              <span class="service-tag-item">CSS3</span>
+              <span class="service-tag-item">Responsive UI</span>
+              <span class="service-tag-item">REST API</span>
+            </div>
+          </div>
+
+          <div class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">⚙️</div>
+            <h3>Backend Engineering</h3>
+            <p>Designing structured server-side logic in Python and Java. Creating high-performance routines and clean business logic.</p>
+            <div class="service-tags">
+              <span class="service-tag-item">Python</span>
+              <span class="service-tag-item">Java</span>
+              <span class="service-tag-item">OOP Design</span>
+              <span class="service-tag-item">API Architecture</span>
+            </div>
+          </div>
+
+          <div class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🗄️</div>
+            <h3>SQL &amp; Database Architecture</h3>
+            <p>Architecting relational database schemas, writing optimized queries, and ensuring data consistency across transactions.</p>
+            <div class="service-tags">
+              <span class="service-tag-item">SQL</span>
+              <span class="service-tag-item">Database Design</span>
+              <span class="service-tag-item">Schema Modeling</span>
+              <span class="service-tag-item">CRUD</span>
+            </div>
+          </div>
+
+          <div class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🤖</div>
+            <h3>IoT &amp; Hardware Automation</h3>
+            <p>Connecting software with physical hardware via Bluetooth protocols, C/C++ firmware integration, and AI natural language control.</p>
+            <div class="service-tags">
+              <span class="service-tag-item">C / C++</span>
+              <span class="service-tag-item">Bluetooth</span>
+              <span class="service-tag-item">AI NLP</span>
+              <span class="service-tag-item">Microcontrollers</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ FEATURED PROJECTS ════════════════ -->
+    <section class="section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Featured Work</div>
+          <h2 id="featured-heading" class="section-title">Projects I've Engineered</h2>
+          <p class="section-desc">Practical, real-world systems built with modern codebases and database persistence.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card fade-up" id="feat-proj-1">
+            <div class="project-thumb thumb-library" aria-hidden="true">📚</div>
+            <div class="project-content">
+              <div class="project-num">Project 01</div>
+              <div class="project-head">
+                <h3>Library Management System</h3>
+                <span class="badge badge-live">Completed</span>
+              </div>
+              <p>
+                A complete web-based management platform for book cataloguing, member accounts, issue/return logging,
+                fine calculation, and admin inventory control.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Database Design</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub Source ↗
+                </a>
+                <a href="projects.html" class="proj-link" style="color:var(--accent);">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card fade-up" id="feat-proj-2">
+            <div class="project-thumb thumb-restaurant" aria-hidden="true">🍽️</div>
+            <div class="project-content">
+              <div class="project-num">Project 02</div>
+              <div class="project-head">
+                <h3>Restaurant Web Application</h3>
+                <span class="badge badge-live">Completed</span>
+              </div>
+              <p>
+                Dynamic restaurant portal featuring interactive menu browsing, table reservations, live order management,
+                and a SQL database for transactional integrity.
+              </p>
+              <div class="project-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">React</span>
+                <span class="tag">CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub Source ↗
+                </a>
+                <a href="projects.html" class="proj-link" style="color:var(--accent);">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card fade-up" id="feat-proj-3">
+            <div class="project-thumb thumb-iot" aria-hidden="true">🤖</div>
+            <div class="project-content">
+              <div class="project-num">Project 03</div>
+              <div class="project-head">
+                <h3>IoT AI Chatbot</h3>
+                <span class="badge badge-iot">IoT · AI</span>
+              </div>
+              <p>
+                Natural language chatbot that commands Bluetooth-connected IoT hardware. Combines C/C++ embedded
+                firmware routines with Python NLP for remote hardware operation.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">Bluetooth</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Gouthamdc2007" class="proj-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub Source ↗
+                </a>
+                <a href="projects.html" class="proj-link" style="color:var(--accent);">Details →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ CODE TERMINAL SECTION ════════════════ -->
+    <section class="section-sm container" aria-label="Terminal status">
+      <div class="terminal-window fade-up">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="tdot tdot-red"></span>
+            <span class="tdot tdot-yellow"></span>
+            <span class="tdot tdot-green"></span>
+          </div>
+          <span class="terminal-title">bash — goutham@devbox ~ status</span>
+          <span style="font-size:.7rem;color:var(--green);font-weight:600;">● Online</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">goutham@dev:~$</span> <span class="t-cmd">cat developer_profile.json</span></div>
+          <div class="t-output">{</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Goutham Kumar SK"</span>,</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Software Developer &amp; Backend Engineer"</span>,</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"languages"</span>: [<span class="t-val">"Java"</span>, <span class="t-val">"Python"</span>, <span class="t-val">"C"</span>, <span class="t-val">"C++"</span>, <span class="t-val">"SQL"</span>, <span class="t-val">"React"</span>, <span class="t-val">"CSS"</span>],</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"India"</span>,</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"open_for_hire"</span>: <span class="t-val">true</span>,</div>
+          <div class="t-output">&nbsp;&nbsp;<span class="t-key">"contact"</span>: <span class="t-val">"gowtham57845@gmail.com"</span></div>
+          <div class="t-output">}</div>
+          <div style="margin-top:8px;"><span class="t-prompt">goutham@dev:~$</span> <span class="t-cmd">echo "Ready to build next project..."</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ WORKFLOW / HOW I WORK ════════════════ -->
+    <section class="section" id="workflow" aria-labelledby="workflow-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Engineering Workflow</div>
+          <h2 id="workflow-heading" class="section-title">How I Build Solutions</h2>
+          <p class="section-desc">A methodical process ensuring high code reliability, scalability, and fast execution.</p>
+        </div>
+
+        <div class="workflow-grid">
+
+          <div class="workflow-step fade-up">
+            <div class="step-num">01</div>
+            <h3>Architecture &amp; Schema</h3>
+            <p>Designing relational SQL entities, data relationships, and clean system boundaries before writing code.</p>
+          </div>
+
+          <div class="workflow-step fade-up">
+            <div class="step-num">02</div>
+            <h3>Backend &amp; Logic</h3>
+            <p>Implementing modular business logic in Java/Python or embedded C/C++ with proper error handling.</p>
+          </div>
+
+          <div class="workflow-step fade-up">
+            <div class="step-num">03</div>
+            <h3>UI &amp; Integration</h3>
+            <p>Crafting intuitive, responsive interfaces with React &amp; CSS and connecting all backend endpoints seamlessly.</p>
+          </div>
+
+          <div class="workflow-step fade-up">
+            <div class="step-num">04</div>
+            <h3>Testing &amp; Deployment</h3>
+            <p>Validating queries, testing edge cases, and publishing to cloud platforms like Vercel and GitHub.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ FAQ ACCORDION ════════════════ -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Frequently Asked Questions</div>
+          <h2 id="faq-heading" class="section-title">Common Questions</h2>
+          <p class="section-desc">Quick answers about my availability, skills, and project experience.</p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" aria-expanded="false">
+              <span>Are you available for full-time roles or internships?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! I am actively looking for software development roles, internships, and freelance projects. Feel free to reach out via the Contact page or email me at <strong>gowtham57845@gmail.com</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is your primary programming stack?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>My core programming stack includes <strong>Java, Python, C, C++, SQL, React, and CSS</strong>. I specialize in backend logic, database schema design, and responsive frontend applications.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do you handle database persistence and SQL?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>I design normalized relational database schemas with primary/foreign keys, write indexed SQL queries, and integrate secure CRUD operations into web applications for real-time inventory, user, or order tracking.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" aria-expanded="false">
+              <span>What hardware experience do you have with IoT?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>I have built an IoT AI Chatbot that communicates over Bluetooth protocols to send commands to microcontrollers and physical devices, merging Python natural language AI with C/C++ firmware control.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ CTA BANNER ════════════════ -->
+    <section class="section container" aria-label="Call to action">
+      <div class="cta-banner fade-up">
+        <div class="section-tag" style="margin-bottom:1rem;">Let's Connect</div>
+        <h2>Ready to build something remarkable?</h2>
+        <p>Whether you have an exciting software project, an open role, or just want to network — my inbox is always open.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+          <a href="https://github.com/Gouthamdc2007" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Check GitHub</a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- BACK TO TOP -->
   <button id="back-to-top" aria-label="Back to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
+  <!-- ════════════════ RICH FOOTER ════════════════ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-left">
-        <div class="nav-logo-mark" aria-hidden="true">GK</div>
-        <p class="footer-copy">© <span class="footer-year">2024</span> <strong>Goutham Kumar SK</strong>. All rights reserved.</p>
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="nav-logo-mark">GK</div>
+            <span class="nav-logo-text">Goutham <em>Kumar</em></span>
+          </div>
+          <p>
+            Software Developer passionate about crafting web applications, robust SQL backends, and IoT systems.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills &amp; Tech</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact &amp; Social</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:gowtham57845@gmail.com">gowtham57845@gmail.com</a></li>
+            <li><a href="https://github.com/Gouthamdc2007" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/goutham-kumar-s-k-790884340/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div class="socials" aria-label="Social links">
-        <a href="https://github.com/Gouthamdc2007" class="social-btn" target="_blank" rel="noopener noreferrer" id="footer-github" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
-        <a href="https://www.linkedin.com/in/goutham-kumar-s-k-790884340/" class="social-btn" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="mailto:gowtham57845@gmail.com" class="social-btn" id="footer-email" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span class="footer-year">2024</span> <strong>Goutham Kumar SK</strong>. All rights reserved.</p>
+        <div class="socials" aria-label="Social links">
+          <a href="https://github.com/Gouthamdc2007" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/goutham-kumar-s-k-790884340/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:gowtham57845@gmail.com" class="social-btn" aria-label="Email" title="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
