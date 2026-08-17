@@ -53,8 +53,10 @@
   <main>
 
     <!-- ════════════════ HERO ════════════════ -->
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
-      <div class="container">
+    <section class="hero" id="hero" aria-labelledby="hero-heading" style="position:relative; background-image:url('ssn-campus.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;">
+      <!-- Hero Dark Overlay -->
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,10,18,0.88) 0%,rgba(0,30,50,0.80) 40%,rgba(6,10,18,0.70) 100%);z-index:0;pointer-events:none;" aria-hidden="true"></div>
+      <div class="container" style="position:relative;z-index:1;">
         <div class="hero-layout">
 
           <!-- Left Column -->
@@ -334,6 +336,37 @@
           <div class="t-output">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val">"Open for full-time / freelance roles"</span></div>
           <div class="t-output">}</div>
           <div style="margin-top:8px;"><span class="t-prompt">goutham@dev:~$</span> <span class="t-cmd">echo "Ready to build next project..."</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ SSN COLLEGE SECTION ════════════════ -->
+    <section class="section" id="college" aria-labelledby="college-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Education</div>
+          <h2 id="college-heading" class="section-title">My College</h2>
+          <p class="section-desc">Pursuing B.E. in Computer Science &amp; Engineering at SSN College of Engineering, Chennai.</p>
+        </div>
+
+        <div class="fade-up" style="border-radius:1.25rem; overflow:hidden; box-shadow:0 8px 40px rgba(0,194,224,0.15); position:relative; max-width:900px; margin:0 auto;">
+          <img
+            src="ssn-campus.jpg"
+            alt="SSN College of Engineering Campus"
+            style="width:100%; height:340px; object-fit:cover; display:block;"
+          />
+          <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(0deg,rgba(6,10,18,0.96) 0%,rgba(6,10,18,0.70) 80%,transparent 100%); padding:2rem 2rem 1.75rem; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+            <img
+              src="ssn-logo.png"
+              alt="SSN College Logo"
+              style="height:60px; width:auto; background:#fff; border-radius:10px; padding:8px 14px; object-fit:contain; box-shadow:0 2px 16px rgba(0,194,224,0.25); flex-shrink:0;"
+            />
+            <div>
+              <div style="color:var(--accent); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:.2rem;">SSN College of Engineering, Chennai</div>
+              <div style="color:var(--text-primary); font-size:1.1rem; font-weight:700; margin-bottom:.2rem;">B.E. in Computer Science &amp; Engineering</div>
+              <div style="color:var(--text-muted); font-size:.85rem;">Sri Sivasubramaniya Nadar College of Engineering &mdash; Autonomous Institution, Anna University</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
