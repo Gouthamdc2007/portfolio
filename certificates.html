@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -36,6 +36,11 @@
     .cert-issuer-tag.ibm{color:#0f62fe;border-color:rgba(15,98,254,.4);background:rgba(15,98,254,.08)}
     .cert-issuer-tag.letsupgrade{color:#f97316;border-color:rgba(249,115,22,.4);background:rgba(249,115,22,.08)}
     .cert-issuer-tag.wscube{color:#0ea5e9;border-color:rgba(14,165,233,.4);background:rgba(14,165,233,.08)}
+    .cert-issuer-tag.microsoft{color:#00a4ef;border-color:rgba(0,164,239,.4);background:rgba(0,164,239,.08)}
+    .cert-issuer-tag.openlearn{color:#a855f7;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.08)}
+    .cert-issuer-tag.officemaster{color:#10b981;border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.08)}
+    .cert-issuer-tag.vaultofcodes{color:#ef4444;border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.08)}
+    .cert-issuer-tag.alison{color:#22c55e;border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08)}
     .cert-date-badge{font-size:.68rem;color:var(--text-muted);letter-spacing:.04em}
     .cert-name{font-size:1rem;font-weight:700;color:var(--text-primary);line-height:1.35;margin-bottom:.45rem}
     .cert-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin-bottom:var(--s2)}
@@ -96,20 +101,21 @@
       <h1 class="certs-title">My <em>Certifications</em></h1>
       <p class="certs-subtitle">Industry-recognized credentials across Cloud Computing, Cybersecurity, AI, JavaScript, and Data Science — earned from globally renowned organizations.</p>
       <div class="certs-stats">
-        <div class="certs-stat"><span class="certs-stat-num">11</span><span class="certs-stat-label">Certificates</span></div>
-        <div class="certs-stat"><span class="certs-stat-num">8</span><span class="certs-stat-label">Issuers</span></div>
-        <div class="certs-stat"><span class="certs-stat-num">5</span><span class="certs-stat-label">Domains</span></div>
-        <div class="certs-stat"><span class="certs-stat-num">2026</span><span class="certs-stat-label">Latest Year</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">17</span><span class="certs-stat-label">Certificates</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">12</span><span class="certs-stat-label">Issuers</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">6</span><span class="certs-stat-label">Key Domains</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">2026</span><span class="certs-stat-label">Active &amp; Current</span></div>
       </div>
     </section>
     <div class="container fade-up">
       <div class="cert-filters">
-        <button class="cert-filter-btn active" data-filter="all">All</button>
+        <button class="cert-filter-btn active" data-filter="all">All (17)</button>
         <button class="cert-filter-btn" data-filter="cloud">☁️ Cloud</button>
         <button class="cert-filter-btn" data-filter="cyber">🔐 Cybersecurity</button>
         <button class="cert-filter-btn" data-filter="ai">🤖 AI &amp; Data</button>
         <button class="cert-filter-btn" data-filter="devops">⚙️ DevOps</button>
         <button class="cert-filter-btn" data-filter="web">💻 Web Dev</button>
+        <button class="cert-filter-btn" data-filter="pro">💼 Professional &amp; Tools</button>
       </div>
     </div>
     <div class="certs-grid container fade-up" id="certs-grid">
@@ -260,10 +266,94 @@
         <div class="cert-body">
           <div class="cert-issuer-row"><span class="cert-issuer-tag wscube">WsCube Tech</span><span class="cert-date-badge">Dec 2025</span></div>
           <h3 class="cert-name">Roadmap to Become a Cybersecurity Expert in 2026</h3>
-          <p class="cert-desc">Masterclass by WsCube Tech (Upskilling Bharat) on the cybersecurity career roadmap, tools, certifications, and real-world threat landscapes.</p>
+          <p class="cert-desc">Masterclass by WsCube Tech on the cybersecurity career roadmap, tools, SOC workflows, certifications, and real-world threat landscapes.</p>
           <div class="cert-actions">
             <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
             <a class="cert-btn cert-btn-dl" href="certificates/cert-wscube-cyber.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Open University Cyber Security -->
+      <div class="cert-card" data-category="cyber" data-title="Introduction to Cyber Security: Stay Safe Online — The Open University" data-file="certificates/cert-cyber-b1-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-cyber-b1-preview.jpg" alt="OpenLearn Cyber Security" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag openlearn">OpenLearn</span><span class="cert-date-badge">Dec 2025</span></div>
+          <h3 class="cert-name">Introduction to Cyber Security</h3>
+          <p class="cert-desc">24-hour accredited curriculum covering fundamental threat modeling, data protection, digital privacy safeguards, and network security.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-cyber-b1.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. VaultofCodes Ethical Hacking -->
+      <div class="cert-card" data-category="cyber" data-title="Ethical Hacking &amp; Cybersecurity Workshop — VaultofCodes" data-file="certificates/cert-certificate1-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-certificate1-preview.jpg" alt="VaultofCodes Ethical Hacking" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag vaultofcodes">VaultofCodes</span><span class="cert-date-badge">Dec 2025</span></div>
+          <h3 class="cert-name">Ethical Hacking &amp; Cyber Workshop</h3>
+          <p class="cert-desc">Hands-on practical workshop covering reconnaissance, port scanning, Wi-Fi vulnerability auditing, web attack vectors, and exploit mitigation.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-vaultofcodes-cyber.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Microsoft Digital Skills Programme (Naan Mudhalvan) -->
+      <div class="cert-card" data-category="pro" data-title="Microsoft Digital Skills Programme — Naan Mudhalvan x Microsoft" data-file="certificates/cert-goutham-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-goutham-preview.jpg" alt="Microsoft Digital Skills Certificate" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag microsoft">Microsoft</span><span class="cert-date-badge">Mar 2024</span></div>
+          <h3 class="cert-name">Microsoft Digital Skills (45 Hrs)</h3>
+          <p class="cert-desc">Comprehensive 45-hour government &amp; Microsoft training across AI Fluency, Digital Productivity, Security Readiness, and Professional Employability.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-microsoft-skills.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. IBM Working in a Digital World -->
+      <div class="cert-card" data-category="pro" data-title="Working in a Digital World: Professional Skills — IBM SkillsBuild" data-file="certificates/cert-ibm2-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-ibm2-preview.jpg" alt="IBM Working in a Digital World" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag ibm">IBM SkillsBuild</span><span class="cert-date-badge">Sep 2024</span></div>
+          <h3 class="cert-name">Working in a Digital World</h3>
+          <p class="cert-desc">IBM-certified professional credential focusing on agile collaboration, critical thinking, problem-solving in tech workspaces, and global teamwork.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-ibm2.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. IBM Job Application Essentials -->
+      <div class="cert-card" data-category="pro" data-title="Job Application Essentials — IBM SkillsBuild" data-file="certificates/cert-ibm1-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-ibm1-preview.jpg" alt="IBM Job Application Essentials" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag ibm">IBM SkillsBuild</span><span class="cert-date-badge">Sep 2024</span></div>
+          <h3 class="cert-name">Job Application Essentials</h3>
+          <p class="cert-desc">Corporate career readiness credential from IBM SkillsBuild validating interview preparation, technical personal branding, and industry communication.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-ibm1.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. Excel Using AI Workshop -->
+      <div class="cert-card" data-category="pro" data-title="Excel Using AI Workshop — OfficeMaster" data-file="certificates/cert-excel-preview.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-excel-preview.jpg" alt="OfficeMaster Excel Using AI" loading="lazy" onclick="openCertLightbox(this.closest('.cert-card'))" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag officemaster">OfficeMaster</span><span class="cert-date-badge">Sep 2025</span></div>
+          <h3 class="cert-name">Microsoft Excel Using AI</h3>
+          <p class="cert-desc">Mastery of 200+ Excel formulas with AI, instant dashboard generation under 2 minutes, and automated Macros &amp; VBA scripting.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-excel.pdf" download>⬇ Download</a>
           </div>
         </div>
       </div>
