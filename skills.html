@@ -180,64 +180,233 @@
 
         <!-- GROUPED DOMAINS -->
         <div class="section-header left-aligned fade-up">
-          <div class="section-tag">Specializations</div>
+          <div class="section-tag">Interactive Specializations</div>
           <h2 class="section-title">Knowledge Breakdown by Domain</h2>
+          <p class="section-desc">Click on any domain postcard box to pop up detailed system architectures and technical competencies.</p>
         </div>
 
         <div class="services-grid" style="margin-bottom:var(--s5);">
 
-          <div class="service-card fade-up">
+          <!-- 1. Web Postcard -->
+          <div class="postcard-box fade-up" data-modal-target="skill-modal-web" role="button" tabindex="0" aria-label="Open Web Engineering Postcard">
+            <div class="postcard-stamp">
+              <span class="stamp-code">DOM-01</span>
+              <span class="stamp-icon">🌐</span>
+            </div>
+            <div class="postcard-seal"></div>
             <div class="service-icon">🌐</div>
             <h3>Web Application Engineering</h3>
             <p>End-to-end development of interactive, responsive web applications with structured DOM rendering.</p>
-            <div class="skill-pills">
+            <div class="skill-pills" style="margin-bottom:var(--s2);">
               <span class="skill-pill">React.js</span>
               <span class="skill-pill">HTML5</span>
               <span class="skill-pill">CSS3</span>
               <span class="skill-pill">Responsive Design</span>
               <span class="skill-pill">REST APIs</span>
             </div>
+            <div class="postcard-prompt">
+              <span>📬 Open Postcard</span>
+              <span class="postcard-arrow">➔</span>
+            </div>
           </div>
 
-          <div class="service-card fade-up">
+          <!-- 2. Database & Backend Postcard -->
+          <div class="postcard-box fade-up" data-modal-target="skill-modal-database" role="button" tabindex="0" aria-label="Open Databases & Backend Postcard">
+            <div class="postcard-stamp">
+              <span class="stamp-code">DOM-02</span>
+              <span class="stamp-icon">🗄️</span>
+            </div>
+            <div class="postcard-seal"></div>
             <div class="service-icon">🗄️</div>
             <h3>Databases &amp; Backend</h3>
             <p>Designing relational data stores, writing ACID-compliant operations, and constructing API handlers.</p>
-            <div class="skill-pills">
+            <div class="skill-pills" style="margin-bottom:var(--s2);">
               <span class="skill-pill">SQL</span>
               <span class="skill-pill">Python</span>
               <span class="skill-pill">Java</span>
               <span class="skill-pill">Database Schema</span>
               <span class="skill-pill">CRUD Operations</span>
             </div>
+            <div class="postcard-prompt">
+              <span>📬 Open Postcard</span>
+              <span class="postcard-arrow">➔</span>
+            </div>
           </div>
 
-          <div class="service-card fade-up">
+          <!-- 3. IoT, AI & Systems Postcard -->
+          <div class="postcard-box fade-up" data-modal-target="skill-modal-iot" role="button" tabindex="0" aria-label="Open IoT, AI & Systems Postcard">
+            <div class="postcard-stamp">
+              <span class="stamp-code">DOM-03</span>
+              <span class="stamp-icon">🤖</span>
+            </div>
+            <div class="postcard-seal"></div>
             <div class="service-icon">🤖</div>
             <h3>IoT, AI &amp; Systems</h3>
             <p>Writing microcontroller firmware and bridging Bluetooth communication with natural language processing.</p>
-            <div class="skill-pills">
+            <div class="skill-pills" style="margin-bottom:var(--s2);">
               <span class="skill-pill">C</span>
               <span class="skill-pill">C++</span>
               <span class="skill-pill">Bluetooth / BLE</span>
               <span class="skill-pill">AI / NLP</span>
               <span class="skill-pill">Hardware Automation</span>
             </div>
+            <div class="postcard-prompt">
+              <span>📬 Open Postcard</span>
+              <span class="postcard-arrow">➔</span>
+            </div>
           </div>
 
-          <div class="service-card fade-up">
-            <div class="service-icon">🛠️</div>
-            <h3>Practices &amp; Workflows</h3>
+          <!-- 4. Programming & Architecture Postcard -->
+          <div class="postcard-box fade-up" data-modal-target="skill-modal-programming" role="button" tabindex="0" aria-label="Open Practices & Workflows Postcard">
+            <div class="postcard-stamp">
+              <span class="stamp-code">DOM-04</span>
+              <span class="stamp-icon">💻</span>
+            </div>
+            <div class="postcard-seal"></div>
+            <div class="service-icon">💻</div>
+            <h3>Core Engineering &amp; Workflows</h3>
             <p>Employing version control, clean code standards, algorithm problem-solving, and deployment pipelines.</p>
-            <div class="skill-pills">
+            <div class="skill-pills" style="margin-bottom:var(--s2);">
               <span class="skill-pill">Git &amp; GitHub</span>
               <span class="skill-pill">Data Structures</span>
               <span class="skill-pill">Algorithms</span>
               <span class="skill-pill">OOP Design</span>
               <span class="skill-pill">VS Code</span>
             </div>
+            <div class="postcard-prompt">
+              <span>📬 Open Postcard</span>
+              <span class="postcard-arrow">➔</span>
+            </div>
           </div>
 
+        </div>
+
+        <!-- POPUP MODALS FOR SKILLS PAGE -->
+        <!-- 1. Web Modal -->
+        <div class="skills-modal-overlay" id="skill-modal-web" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="skills-modal">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+              <div class="modal-icon">🌐</div>
+              <div class="modal-title-wrap">
+                <span class="modal-subtitle">Specialization // 01</span>
+                <h3>Web Application Engineering</h3>
+              </div>
+            </div>
+            <div class="modal-skills-list">
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">⚛️ React Frontend Architecture</span>
+                  <span class="modal-skill-tag">SPA &amp; Component Trees</span>
+                </div>
+                <p class="modal-skill-desc">Component lifecycle management, dynamic state, interactive hooks, and modular UI structure.</p>
+              </div>
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">🎨 Modern CSS3 &amp; Glassmorphism</span>
+                  <span class="modal-skill-tag">Design Systems</span>
+                </div>
+                <p class="modal-skill-desc">Custom design systems, CSS grid &amp; flexbox, fluid typography, dark mode theming, and responsive layouts.</p>
+              </div>
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">📱 Responsive Web Design</span>
+                  <span class="modal-skill-tag">Cross-Platform UX</span>
+                </div>
+                <p class="modal-skill-desc">Seamless multi-device fluidity across desktop, tablet, and mobile screens with touch-first accessibility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Database Modal -->
+        <div class="skills-modal-overlay" id="skill-modal-database" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="skills-modal">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+              <div class="modal-icon">🗄️</div>
+              <div class="modal-title-wrap">
+                <span class="modal-subtitle">Specialization // 02</span>
+                <h3>Databases &amp; Backend</h3>
+              </div>
+            </div>
+            <div class="modal-skills-list">
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">🗄️ Relational Database Management (SQL)</span>
+                  <span class="modal-skill-tag">Schema Design</span>
+                </div>
+                <p class="modal-skill-desc">Relational schema architecture, joins, views, subqueries, primary/foreign key constraints, and transactional consistency.</p>
+              </div>
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">🐍 Python &amp; Java Backend Services</span>
+                  <span class="modal-skill-tag">Server Logic</span>
+                </div>
+                <p class="modal-skill-desc">Building robust controllers, database drivers, and clean RESTful endpoint handlers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. IoT Modal -->
+        <div class="skills-modal-overlay" id="skill-modal-iot" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="skills-modal">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+              <div class="modal-icon">🤖</div>
+              <div class="modal-title-wrap">
+                <span class="modal-subtitle">Specialization // 03</span>
+                <h3>IoT, AI &amp; Systems</h3>
+              </div>
+            </div>
+            <div class="modal-skills-list">
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">📡 Bluetooth Hardware Protocols</span>
+                  <span class="modal-skill-tag">Serial Communication</span>
+                </div>
+                <p class="modal-skill-desc">Bridging wireless RFCOMM / Bluetooth serial communication between host client apps and microcontrollers.</p>
+              </div>
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">🧠 Natural Language AI Processing</span>
+                  <span class="modal-skill-tag">NLP NLP Chatbot</span>
+                </div>
+                <p class="modal-skill-desc">Intent recognition and command translation for real-time remote hardware execution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Programming Modal -->
+        <div class="skills-modal-overlay" id="skill-modal-programming" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="skills-modal">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+              <div class="modal-icon">💻</div>
+              <div class="modal-title-wrap">
+                <span class="modal-subtitle">Specialization // 04</span>
+                <h3>Core Engineering &amp; Workflows</h3>
+              </div>
+            </div>
+            <div class="modal-skills-list">
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">☕ Java &amp; Python Algorithms</span>
+                  <span class="modal-skill-tag">OOP &amp; Data Structures</span>
+                </div>
+                <p class="modal-skill-desc">Algorithm design, object-oriented principles, modular architecture, and unit testing workflows.</p>
+              </div>
+              <div class="modal-skill-item">
+                <div class="modal-skill-head">
+                  <span class="modal-skill-name">⚙️ C &amp; C++ Systems</span>
+                  <span class="modal-skill-tag">Embedded Logic</span>
+                </div>
+                <p class="modal-skill-desc">Low-level memory pointers, firmware routines, and bitwise hardware drivers.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- CURRENTLY EXPLORING STRIP -->

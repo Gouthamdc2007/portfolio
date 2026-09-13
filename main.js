@@ -288,6 +288,56 @@
     });
   }
 
+  // ─── POSTCARD SKILLS MODAL SYSTEM ────────────
+  function openSkillsModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    playClickSound('button');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSkillsModal(modal) {
+    if (!modal) return;
+    playClickSound('nav');
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Open on postcard click
+  document.querySelectorAll('.postcard-box[data-modal-target]').forEach(box => {
+    box.addEventListener('click', () => {
+      const targetId = box.getAttribute('data-modal-target');
+      openSkillsModal(targetId);
+    });
+    box.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const targetId = box.getAttribute('data-modal-target');
+        openSkillsModal(targetId);
+      }
+    });
+  });
+
+  // Close on close button click or overlay click
+  document.querySelectorAll('.skills-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.closest('.modal-close-btn')) {
+        closeSkillsModal(overlay);
+      }
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('.skills-modal-overlay.active');
+      if (activeModal) closeSkillsModal(activeModal);
+    }
+  });
+
   // ─── BACK TO TOP ──────────────────────────────
   const backBtn = document.getElementById('back-to-top');
   if (backBtn) {
@@ -305,3 +355,4 @@
   });
 
 })();
+
