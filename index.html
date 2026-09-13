@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- AMBIENT BACKGROUND GLOWS -->
+  <!-- AMBIENT BACKGROUND GLOWS & CYBER AURORAS -->
   <div class="bg-ambient-glow glow-1" aria-hidden="true"></div>
   <div class="bg-ambient-glow glow-2" aria-hidden="true"></div>
   <div class="bg-ambient-glow glow-3" aria-hidden="true"></div>
@@ -52,16 +52,19 @@
 
   <main>
 
-    <!-- ════════════════ HERO ════════════════ -->
+    <!-- ════════════════ HERO SECTION ════════════════ -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-layout">
 
           <!-- Left Column -->
           <div class="hero-content">
-            <div class="hero-badge">💼 Ex-Web Dev Intern @ NVSKZEN INSTITUTE</div>
+            <div class="hero-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              💼 Ex-Web Dev Intern @ NVSKZEN INSTITUTE
+            </div>
 
-            <p class="hero-greeting">Hi there, I'm</p>
+            <p class="hero-greeting">&lt;developer_profile&gt;</p>
             <h1 id="hero-heading" class="hero-name">
               Goutham<br />Kumar <span class="gradient-text">SK</span>
             </h1>
@@ -99,7 +102,7 @@
             </div>
           </div>
 
-          <!-- Right Column (Photo + Orbiting Rings + Floating Badges) -->
+          <!-- Right Column (Avatar + Orbiting Cyber Rings + Badges) -->
           <div class="hero-photo-side">
             <div class="hero-photo-wrap">
               <img
@@ -112,7 +115,7 @@
               <div class="photo-ring photo-ring-2" aria-hidden="true"></div>
               <div class="photo-ring photo-ring-3" aria-hidden="true"></div>
 
-              <!-- Floating Tech Tags -->
+              <!-- Floating Tech Badges -->
               <div class="floating-badge fb-1">💼 NVSKZEN Intern</div>
               <div class="floating-badge fb-2">🗄️ SQL &amp; Backend</div>
               <div class="floating-badge fb-3">🤖 IoT AI Chatbot</div>
@@ -147,29 +150,44 @@
       </div>
     </section>
 
-    <!-- ════════════════ SERVICES / WHAT I DO ════════════════ -->
+    <!-- ════════════════ SKILLS / CAPABILITIES SECTION ════════════════ -->
     <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Capabilities</div>
-          <h2 id="services-heading" class="section-title">What I Specialize In</h2>
-          <p class="section-desc">From web architectures to physical hardware automation, here is how I create value with code.</p>
+          <div class="section-tag">Technology Stack</div>
+          <h2 id="services-heading" class="section-title">Core Skills &amp; Capabilities</h2>
+          <p class="section-desc">Structured, modern software engineering across programming, web interfaces, backend APIs, and hardware systems.</p>
         </div>
 
         <div class="services-grid">
 
+          <!-- 1. Programming -->
+          <div class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">💻</div>
+            <h3>Programming</h3>
+            <p>Writing clean, efficient, object-oriented code with deep understanding of data structures, memory management, and algorithm optimization.</p>
+            <div class="service-tags">
+              <span class="service-tag-item">Java</span>
+              <span class="service-tag-item">Python</span>
+              <span class="service-tag-item">C</span>
+              <span class="service-tag-item">C++</span>
+            </div>
+          </div>
+
+          <!-- 2. Web Development -->
           <div class="service-card fade-up">
             <div class="service-icon" aria-hidden="true">🌐</div>
-            <h3>Full-Stack Web Apps</h3>
-            <p>Building responsive, accessible web applications with clean frontend interfaces in React and robust backend processing.</p>
+            <h3>Web Development</h3>
+            <p>Crafting high-performance, accessible, and responsive user interfaces with modular component architectures and modern CSS systems.</p>
             <div class="service-tags">
               <span class="service-tag-item">React</span>
               <span class="service-tag-item">CSS3</span>
               <span class="service-tag-item">Responsive UI</span>
-              <span class="service-tag-item">REST API</span>
+              <span class="service-tag-item">Modern Layouts</span>
             </div>
           </div>
 
+          <!-- 3. Backend Engineering -->
           <div class="service-card fade-up">
             <div class="service-icon" aria-hidden="true">⚙️</div>
             <h3>Backend Engineering</h3>
@@ -177,14 +195,15 @@
             <div class="service-tags">
               <span class="service-tag-item">Python</span>
               <span class="service-tag-item">Java</span>
+              <span class="service-tag-item">REST API</span>
               <span class="service-tag-item">OOP Design</span>
-              <span class="service-tag-item">API Architecture</span>
             </div>
           </div>
 
+          <!-- 4. Database Architecture -->
           <div class="service-card fade-up">
             <div class="service-icon" aria-hidden="true">🗄️</div>
-            <h3>SQL &amp; Database Architecture</h3>
+            <h3>Database Architecture</h3>
             <p>Architecting relational database schemas, writing optimized queries, and ensuring data consistency across transactions.</p>
             <div class="service-tags">
               <span class="service-tag-item">SQL</span>
@@ -194,14 +213,15 @@
             </div>
           </div>
 
+          <!-- 5. IoT & Embedded Systems -->
           <div class="service-card fade-up">
             <div class="service-icon" aria-hidden="true">🤖</div>
-            <h3>IoT &amp; Hardware Automation</h3>
+            <h3>IoT &amp; Embedded Systems</h3>
             <p>Connecting software with physical hardware via Bluetooth protocols, C/C++ firmware integration, and AI natural language control.</p>
             <div class="service-tags">
               <span class="service-tag-item">C / C++</span>
               <span class="service-tag-item">Bluetooth</span>
-              <span class="service-tag-item">AI NLP</span>
+              <span class="service-tag-item">AI / NLP</span>
               <span class="service-tag-item">Microcontrollers</span>
             </div>
           </div>
@@ -210,7 +230,7 @@
       </div>
     </section>
 
-    <!-- ════════════════ FEATURED PROJECTS ════════════════ -->
+    <!-- ════════════════ FEATURED PROJECTS SECTION ════════════════ -->
     <section class="section" id="featured" aria-labelledby="featured-heading">
       <div class="container">
         <div class="section-header">
@@ -221,9 +241,11 @@
 
         <div class="projects-grid">
 
-          <!-- Project 1 -->
+          <!-- Project 1: Library Management System -->
           <article class="project-card fade-up" id="feat-proj-1">
-            <div class="project-thumb thumb-library" aria-hidden="true">📚</div>
+            <div class="project-thumb thumb-library" aria-hidden="true">
+              <span class="project-thumb-emoji">📚</span>
+            </div>
             <div class="project-content">
               <div class="project-num">Project 01</div>
               <div class="project-head">
@@ -250,9 +272,11 @@
             </div>
           </article>
 
-          <!-- Project 2 -->
+          <!-- Project 2: Restaurant Web Application -->
           <article class="project-card fade-up" id="feat-proj-2">
-            <div class="project-thumb thumb-restaurant" aria-hidden="true">🍽️</div>
+            <div class="project-thumb thumb-restaurant" aria-hidden="true">
+              <span class="project-thumb-emoji">🍽️</span>
+            </div>
             <div class="project-content">
               <div class="project-num">Project 02</div>
               <div class="project-head">
@@ -279,9 +303,11 @@
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 3: IoT AI Chatbot -->
           <article class="project-card fade-up" id="feat-proj-3">
-            <div class="project-thumb thumb-iot" aria-hidden="true">🤖</div>
+            <div class="project-thumb thumb-iot" aria-hidden="true">
+              <span class="project-thumb-emoji">🤖</span>
+            </div>
             <div class="project-content">
               <div class="project-num">Project 03</div>
               <div class="project-head">
@@ -322,7 +348,7 @@
             <span class="tdot tdot-green"></span>
           </div>
           <span class="terminal-title">bash — goutham@devbox ~ profile</span>
-          <span style="font-size:.7rem;color:var(--green);font-weight:600;">● Online</span>
+          <span class="terminal-status-indicator">● Online</span>
         </div>
         <div class="terminal-body">
           <div><span class="t-prompt">goutham@dev:~$</span> <span class="t-cmd">cat developer_profile.json</span></div>
@@ -344,7 +370,7 @@
         <div class="section-header">
           <div class="section-tag">Engineering Workflow</div>
           <h2 id="workflow-heading" class="section-title">How I Build Solutions</h2>
-          <p class="section-desc">A methodical process ensuring high code reliability, scalability, and fast execution.</p>
+          <p class="section-desc">A methodical engineering process ensuring high code reliability, scalability, and fast execution.</p>
         </div>
 
         <div class="workflow-grid">
@@ -377,7 +403,60 @@
       </div>
     </section>
 
-    <!-- ════════════════ FAQ ACCORDION ════════════════ -->
+    <!-- ════════════════ ACHIEVEMENTS & CERTIFICATIONS SECTION ════════════════ -->
+    <section class="section" id="achievements" aria-labelledby="achievements-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Credentials &amp; Milestones</div>
+          <h2 id="achievements-heading" class="section-title">Achievements &amp; Certifications</h2>
+          <p class="section-desc">Academic excellence, professional training certificates, and technical milestones.</p>
+        </div>
+
+        <div class="achievements-grid">
+
+          <!-- Achievement 1: Internship Certificate Structure -->
+          <div class="achievement-card fade-up">
+            <div class="achievement-badge-icon" aria-hidden="true">📜</div>
+            <div class="achievement-body">
+              <div class="achievement-meta">
+                <span class="achievement-org">NVSKZEN INSTITUTE PRIVATE LIMITED</span>
+                <span class="achievement-date">Completed</span>
+              </div>
+              <h3>Web Developer Internship</h3>
+              <p>Completed hands-on software training and real-world web application development, focusing on responsive UI engineering, front-end architecture, and performance optimization.</p>
+              <div class="achievement-action">
+                <a href="about.html" class="btn btn-outline achievement-btn">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 2: Computer Science & Engineering Milestone Structure -->
+          <div class="achievement-card fade-up">
+            <div class="achievement-badge-icon" aria-hidden="true">🎓</div>
+            <div class="achievement-body">
+              <div class="achievement-meta">
+                <span class="achievement-org">Computer Science &amp; Engineering</span>
+                <span class="achievement-date">B.E. Degree</span>
+              </div>
+              <h3>B.E. Computer Science &amp; Engineering</h3>
+              <p>Undergraduate engineering education specializing in Data Structures, Algorithms, Relational Database Management Systems (SQL), Object-Oriented Design, and Software Architecture.</p>
+              <div class="achievement-action">
+                <a href="about.html" class="btn btn-outline achievement-btn">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ FAQ ACCORDION SECTION ════════════════ -->
     <section class="section" id="faq" aria-labelledby="faq-heading">
       <div class="container">
         <div class="section-header">
