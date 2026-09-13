@@ -2849,7 +2849,7 @@ textarea {
 }
 
 /* ================================================================
-   22B. TOP SCROLL PROGRESS BAR & THEME CONTROLS HUD
+   22B. TOP SCROLL PROGRESS BAR & PROFILE INTERACTION
    ================================================================ */
 
 #scroll-progress-bar {
@@ -2865,104 +2865,38 @@ textarea {
   pointer-events: none;
 }
 
-/* Theme Glow Accent Color Schemes */
-:root[data-theme="matrix"] {
-  --accent: #10b981;
-  --accent-rgb: 16, 185, 129;
-  --accent-light: #34d399;
-  --accent-mid: rgba(16, 185, 129, 0.4);
-  --accent-indigo: #059669;
-  --glow-cyan: 0 0 25px rgba(16, 185, 129, 0.35);
-}
-
-:root[data-theme="purple"] {
-  --accent: #c084fc;
-  --accent-rgb: 192, 132, 252;
-  --accent-light: #e879f9;
-  --accent-mid: rgba(192, 132, 252, 0.4);
-  --accent-indigo: #9333ea;
-  --glow-cyan: 0 0 25px rgba(192, 132, 252, 0.35);
-}
-
-:root[data-theme="amber"] {
-  --accent: #fbbf24;
-  --accent-rgb: 251, 191, 36;
-  --accent-light: #fde68a;
-  --accent-mid: rgba(251, 191, 36, 0.4);
-  --accent-indigo: #d97706;
-  --glow-cyan: 0 0 25px rgba(251, 191, 36, 0.35);
-}
-
-/* Navbar Theme & Audio Controls */
-.nav-extra-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-theme-toggle, .nav-sound-toggle {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  padding: 6px 12px;
-  border-radius: var(--radius-x);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
+/* Profile Photo Interactive Holographic Glow Pulse */
+.hero-photo-wrap, .about-photo-container {
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all var(--dur) var(--ease);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
-.nav-theme-toggle:hover, .nav-sound-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0, 242, 254, 0.08);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+.hero-photo-wrap:hover, .about-photo-container:hover {
+  transform: scale(1.02);
 }
 
-.theme-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
-  transition: background 0.3s, box-shadow 0.3s;
+.profile-pulse-glow {
+  animation: profileHoloPop 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.sound-bars {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 12px;
+@keyframes profileHoloPop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.8), var(--glow-cyan);
+  }
+  40% {
+    transform: scale(1.06) rotate(2deg);
+    box-shadow: 0 0 50px 15px rgba(0, 242, 254, 0.6), 0 0 90px rgba(99, 102, 241, 0.5);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.3), var(--glow-cyan);
+  }
 }
 
-.sound-bars .bar {
-  width: 2.5px;
-  background: var(--accent);
-  border-radius: 1px;
-  animation: equalize 0.8s ease-in-out infinite alternate;
-}
-
-.sound-bars .bar-1 { height: 6px; animation-delay: 0.1s; }
-.sound-bars .bar-2 { height: 12px; animation-delay: 0.3s; }
-.sound-bars .bar-3 { height: 8px; animation-delay: 0.2s; }
-
-.nav-sound-toggle.muted .sound-bars .bar {
-  animation: none !important;
-  height: 3px !important;
-  background: var(--text-dim) !important;
-}
-
-.nav-sound-toggle.muted .sound-icon {
-  opacity: 0.45;
-}
-
-@keyframes equalize {
-  0% { height: 3px; }
-  100% { height: 12px; }
+.profile-pulse-glow .hero-photo, .profile-pulse-glow .about-photo {
+  filter: brightness(1.2) contrast(1.1);
+  transition: filter 0.3s;
 }
 
 /* ================================================================

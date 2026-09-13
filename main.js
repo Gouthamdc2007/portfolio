@@ -8,7 +8,6 @@
 
   // ─── AUDIO ENGINE (LOUD & CRISP ON ALL CLICKS) ──
   let audioCtx = null;
-  let soundEnabled = localStorage.getItem('portfolio_sound') !== 'false';
 
   function initAudio() {
     if (!audioCtx) {
@@ -22,8 +21,38 @@
     }
   }
 
+  // ─── SPECIAL UNIQUE PROFILE PHOTO SOUND EFFECT ───
+  function playProfileSound() {
+    initAudio();
+    if (!audioCtx) return;
+
+    try {
+      const now = audioCtx.currentTime;
+      // Futuristic 5-note harmonic chime arpeggio (C Major 9 sci-fi power-up chord)
+      const freqs = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+      freqs.forEach((freq, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const noteTime = now + (idx * 0.055);
+
+        osc.type = idx % 2 === 0 ? 'sine' : 'triangle';
+        osc.frequency.setValueAtTime(freq, noteTime);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.05, noteTime + 0.18);
+
+        gain.gain.setValueAtTime(0.001, noteTime);
+        gain.gain.exponentialRampToValueAtTime(0.28, noteTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, noteTime + 0.28);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(noteTime);
+        osc.stop(noteTime + 0.3);
+      });
+    } catch (e) {}
+  }
+
   function playClickSound(soundType) {
-    if (!soundEnabled) return;
     initAudio();
     if (!audioCtx) return;
 
@@ -79,6 +108,10 @@
   window.addEventListener('pointerdown', (e) => {
     initAudio();
     const target = e.target;
+    if (target.closest('.hero-photo-wrap, .hero-photo, .about-photo-container, .about-photo, .about-photo-inner')) {
+      playProfileSound();
+      return;
+    }
     if (target.closest('.faq-question')) {
       playClickSound('accordion');
     } else if (target.closest('button, .btn, .nav-cta, input[type="submit"]')) {
@@ -431,68 +464,16 @@
     updateProgress();
   })();
 
-  // ─── SOUND FX CONTROLLER & EQUALIZER HUD ─────
-  (function initSoundToggle() {
-    function updateSoundUI() {
-      document.querySelectorAll('.nav-sound-toggle, #sound-toggle-btn').forEach(btn => {
-        btn.classList.toggle('muted', !soundEnabled);
-        btn.setAttribute('title', soundEnabled ? 'Sound Effects: ON (Click to Mute)' : 'Sound Effects: MUTED (Click to Unmute)');
-        const icon = btn.querySelector('.sound-icon');
-        if (icon) icon.textContent = soundEnabled ? '🔊' : '🔇';
-      });
-    }
-    updateSoundUI();
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.nav-sound-toggle, #sound-toggle-btn');
-      if (btn) {
-        soundEnabled = !soundEnabled;
-        localStorage.setItem('portfolio_sound', soundEnabled ? 'true' : 'false');
-        updateSoundUI();
-        if (soundEnabled) playClickSound('button');
-      }
+  // ─── PROFILE PHOTO INTERACTION & HOLOGRAPHIC PULSE ───
+  const profileElements = document.querySelectorAll('.hero-photo-wrap, .hero-photo, .about-photo-container, .about-photo, .about-photo-inner');
+  profileElements.forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', (e) => {
+      const wrap = el.closest('.hero-photo-wrap, .about-photo-container') || el;
+      wrap.classList.add('profile-pulse-glow');
+      setTimeout(() => wrap.classList.remove('profile-pulse-glow'), 900);
     });
-  })();
-
-  // ─── CYBER THEME GLOW ACCENT SWITCHER ────────
-  (function initThemeSwitcher() {
-    const THEMES = [
-      { id: 'cyan', name: 'Cyber Cyan', dotClass: 'dot-cyan' },
-      { id: 'matrix', name: 'Matrix Emerald', dotClass: 'dot-emerald' },
-      { id: 'purple', name: 'Neon Purple', dotClass: 'dot-purple' },
-      { id: 'amber', name: 'Solar Amber', dotClass: 'dot-amber' }
-    ];
-    let currentThemeIdx = 0;
-    const savedTheme = localStorage.getItem('portfolio_theme') || 'cyan';
-    const initialIdx = THEMES.findIndex(t => t.id === savedTheme);
-    if (initialIdx !== -1) currentThemeIdx = initialIdx;
-
-    function applyTheme(idx) {
-      const theme = THEMES[idx];
-      if (theme.id === 'cyan') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', theme.id);
-      }
-      localStorage.setItem('portfolio_theme', theme.id);
-
-      document.querySelectorAll('.nav-theme-toggle, #theme-color-btn').forEach(btn => {
-        const nameEl = btn.querySelector('.theme-name');
-        if (nameEl) nameEl.textContent = theme.name.split(' ')[1] || 'Glow';
-        btn.setAttribute('title', `Theme: ${theme.name} (Click to Cycle)`);
-      });
-    }
-    applyTheme(currentThemeIdx);
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.nav-theme-toggle, #theme-color-btn');
-      if (btn) {
-        currentThemeIdx = (currentThemeIdx + 1) % THEMES.length;
-        applyTheme(currentThemeIdx);
-        playClickSound('button');
-      }
-    });
-  })();
+  });
 
   // ─── FOOTER YEAR ──────────────────────────────
   document.querySelectorAll('.footer-year').forEach(el => {
