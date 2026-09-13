@@ -1171,6 +1171,7 @@ p {
   box-shadow: var(--glow-cyan);
   border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.3s var(--ease);
+  pointer-events: none;
 }
 
 .mailbox-action-btn:hover {
