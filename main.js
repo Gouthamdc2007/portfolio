@@ -312,25 +312,104 @@
   }, { threshold: 0.3 });
   document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
 
-  // ─── CONTACT FORM ─────────────────────────────
+  // ─── CONTACT FORM & INTERACTIVE COMMS ─────────────────────────
   const form       = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
+  const msgInput   = document.getElementById('contact-message');
+  const charCount  = document.getElementById('char-counter');
+
+  if (msgInput && charCount) {
+    msgInput.addEventListener('input', () => {
+      const len = msgInput.value.length;
+      charCount.textContent = `${len} / 1000`;
+      if (len > 900) {
+        charCount.style.color = '#ef4444';
+      } else if (len > 750) {
+        charCount.style.color = '#f59e0b';
+      } else {
+        charCount.style.color = 'var(--text-dim)';
+      }
+    });
+  }
+
+  // 1-Click Copy Email
+  document.querySelectorAll('.copy-email-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const email = btn.dataset.email;
+      if (!email) return;
+
+      navigator.clipboard.writeText(email).then(() => {
+        playClickSound('nav');
+        const label = btn.querySelector('.copy-label');
+        const origText = label ? label.textContent : 'Copy';
+        if (label) label.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          if (label) label.textContent = origText;
+          btn.classList.remove('copied');
+        }, 2200);
+      }).catch(() => {
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        const label = btn.querySelector('.copy-label');
+        if (label) label.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          if (label) label.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2200);
+      });
+    });
+  });
+
+  // Live IST Time in Status Console
+  const istTimeEl = document.getElementById('live-ist-time');
+  if (istTimeEl) {
+    function updateIST() {
+      try {
+        const now = new Date();
+        const istStr = now.toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Kolkata',
+          hour12: true,
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        istTimeEl.textContent = `IST ${istStr} (UTC+5:30)`;
+      } catch (e) {
+        istTimeEl.textContent = `IST (UTC+5:30)`;
+      }
+    }
+    updateIST();
+    setInterval(updateIST, 30000);
+  }
+
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn  = form.querySelector('.form-btn');
       const orig = btn.innerHTML;
-      btn.innerHTML = 'Sending message…';
+      btn.innerHTML = '<span>Transmitting...</span>';
       btn.disabled = true;
+      playClickSound('button');
+
       setTimeout(() => {
         form.reset();
+        if (charCount) charCount.textContent = '0 / 1000';
         btn.innerHTML = orig;
         btn.disabled = false;
         if (successMsg) {
           successMsg.style.display = 'block';
-          setTimeout(() => successMsg.style.display = 'none', 6000);
+          playProfileSound();
+          setTimeout(() => successMsg.style.display = 'none', 7000);
         }
-      }, 1200);
+      }, 1100);
     });
   }
 
