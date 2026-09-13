@@ -117,132 +117,163 @@
 
           </div>
 
-          <!-- Right Column (Story + Professional Experience + Timeline) -->
+          <!-- Right Column (Story + Professional Experience + Timeline Inside Interactive Dossier) -->
           <div class="about-content">
 
-            <div class="fade-up">
-              <div class="section-tag">My Background</div>
-              <h2 class="section-title">Web Developer &amp; Software Engineer</h2>
-            </div>
+            <!-- ════════════ INTERACTIVE DEVELOPER DOSSIER VAULT ════════════ -->
+            <div class="interactive-theme-vault dossier-capsule-vault fade-up" id="dossier-capsule-vault"
+                 data-closed-icon="📁"
+                 data-open-icon="📖"
+                 data-closed-label="📂 Decrypt &amp; Open Developer Dossier"
+                 data-open-label="🔒 Close Developer Archive"
+                 data-closed-status="Developer Archive Sealed · Experience &amp; Academic Records Primed"
+                 data-open-status="Dossier Decrypted · Verified Records Online">
 
-            <p class="fade-up">
-              I am <strong>Goutham Kumar SK</strong>, a passionate Software and Web Developer.
-              Having worked as a <strong>Web Developer Intern at NVSKZEN INSTITUTE PRIVATE LIMITED</strong>,
-              I gained practical experience building responsive web solutions, structuring front-end components,
-              and collaborating on production-level web development.
-            </p>
-
-            <p class="fade-up" style="margin-top:1rem;">
-              My core technical competencies include <strong>Java, Python, C, C++, SQL, CSS, and React</strong>.
-              From relational database modeling for a Library Management System to responsive e-commerce/restaurant flows
-              and IoT Bluetooth automation, I am passionate about writing clean, maintainable, and high-performance software.
-            </p>
-
-            <!-- Stats -->
-            <div class="about-stats fade-up" style="margin:2rem 0;">
-              <div class="stat-box">
-                <span class="n" data-target="1" data-suffix=" (Intern)">0</span>
-                <span class="l">Industry Experience</span>
-              </div>
-              <div class="stat-box">
-                <span class="n" data-target="3" data-suffix="+">0+</span>
-                <span class="l">Core Projects</span>
-              </div>
-              <div class="stat-box">
-                <span class="n" data-target="7" data-suffix="">0</span>
-                <span class="l">Languages</span>
-              </div>
-            </div>
-
-            <!-- Professional Experience Highlight -->
-            <div class="fade-up" style="margin-top:2.5rem;">
-              <h3 style="margin-bottom:1rem;">Professional Work Experience</h3>
-              <div class="card" style="padding:1.5rem;border-color:var(--accent-mid);background:var(--bg-card-hover);">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
-                  <div>
-                    <h4 style="font-size:1.15rem;color:var(--text);margin:0;">Web Developer (Intern)</h4>
-                    <span style="font-size:.88rem;color:var(--accent);font-weight:700;">NVSKZEN INSTITUTE PRIVATE LIMITED</span>
-                  </div>
-                  <span class="badge badge-live">Industry Internship</span>
+              <div class="theme-vault-hub" role="button" tabindex="0" aria-expanded="false" aria-controls="dossier-vault-content" aria-label="Toggle Developer Dossier">
+                <div class="theme-vault-icon-wrap" aria-hidden="true">
+                  <span class="theme-vault-icon">📁</span>
+                  <span class="theme-vault-count-pill">Classified</span>
                 </div>
-                <p style="font-size:.88rem;line-height:1.7;margin-bottom:10px;">
-                  Contributed as a Web Developer working on responsive frontend layouts, interactive web components, UI optimization, and web application development best practices.
+                <div class="theme-vault-title-wrap">
+                  <div class="theme-vault-status-tag">Developer Archive Sealed · Experience &amp; Academic Records Primed</div>
+                  <h3 style="margin-top:8px;">Developer Identity &amp; Career Dossier</h3>
+                  <p>Contains: Professional Work Experience at NVSKZEN INSTITUTE, Technical Capabilities &amp; Timeline.</p>
+                </div>
+                <button class="theme-vault-action-btn" type="button">
+                  <span class="theme-vault-btn-label">📂 Decrypt &amp; Open Developer Dossier</span>
+                  <span aria-hidden="true">➔</span>
+                </button>
+              </div>
+
+              <!-- ════════════ THE RELEASED DOSSIER CONTENT ════════════ -->
+              <div class="theme-vault-content" id="dossier-vault-content" aria-hidden="true" style="display:none;text-align:left;">
+
+                <div style="margin-top:1.5rem;">
+                  <div class="section-tag">Verified Background</div>
+                  <h2 class="section-title">Web Developer &amp; Software Engineer</h2>
+                </div>
+
+                <p style="margin-top:1rem;line-height:1.75;">
+                  I am <strong>Goutham Kumar SK</strong>, a passionate Software and Web Developer.
+                  Having worked as a <strong>Web Developer Intern at NVSKZEN INSTITUTE PRIVATE LIMITED</strong>,
+                  I gained practical experience building responsive web solutions, structuring front-end components,
+                  and collaborating on production-level web development.
                 </p>
-                <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                  <span class="tag">Web Development</span>
-                  <span class="tag">HTML5 / CSS3</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Responsive UI</span>
+
+                <p style="margin-top:1rem;line-height:1.75;">
+                  My core technical competencies include <strong>Java, Python, C, C++, SQL, CSS, and React</strong>.
+                  From relational database modeling for a Library Management System to responsive e-commerce/restaurant flows
+                  and IoT Bluetooth automation, I am passionate about writing clean, maintainable, and high-performance software.
+                </p>
+
+                <!-- Stats -->
+                <div class="about-stats" style="margin:2rem 0;">
+                  <div class="stat-box">
+                    <span class="n" data-target="1" data-suffix=" (Intern)">0</span>
+                    <span class="l">Industry Experience</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="n" data-target="3" data-suffix="+">0+</span>
+                    <span class="l">Core Projects</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="n" data-target="7" data-suffix="">0</span>
+                    <span class="l">Languages</span>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Tools Arsenal -->
-            <div class="fade-up" style="margin-top:2.5rem;">
-              <h3 style="margin-bottom:1rem;">Tools &amp; Development Arsenal</h3>
-              <div style="display:flex;flex-wrap:wrap;gap:10px;">
-                <span class="skill-pill">VS Code</span>
-                <span class="skill-pill">Git &amp; GitHub</span>
-                <span class="skill-pill">MySQL Workbench</span>
-                <span class="skill-pill">Linux / Terminal</span>
-                <span class="skill-pill">Arduino IDE</span>
-                <span class="skill-pill">Postman</span>
-                <span class="skill-pill">Vercel</span>
-              </div>
-            </div>
-
-            <!-- Timeline -->
-            <div class="timeline fade-up" style="margin-top:3rem;">
-              <h3 style="margin-bottom:1.5rem;">Career &amp; Academic Timeline</h3>
-
-              <!-- Internship Item -->
-              <div class="timeline-item">
-                <div class="timeline-dot" style="border-color:var(--accent);">💼</div>
-                <div class="timeline-content">
-                  <div class="tl-sub">Work Experience · Internship</div>
-                  <h4>Web Developer — NVSKZEN INSTITUTE PRIVATE LIMITED</h4>
-                  <p>Developed modern, responsive web application interfaces, implemented styling architectures, and integrated interactive UI logic.</p>
+                <!-- Professional Experience Highlight -->
+                <div style="margin-top:2.5rem;">
+                  <h3 style="margin-bottom:1rem;">Professional Work Experience</h3>
+                  <div class="card" style="padding:1.5rem;border-color:var(--accent-mid);background:var(--bg-card-hover);">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+                      <div>
+                        <h4 style="font-size:1.15rem;color:var(--text);margin:0;">Web Developer (Intern)</h4>
+                        <span style="font-size:.88rem;color:var(--accent);font-weight:700;">NVSKZEN INSTITUTE PRIVATE LIMITED</span>
+                      </div>
+                      <span class="badge badge-live">Industry Internship</span>
+                    </div>
+                    <p style="font-size:.88rem;line-height:1.7;margin-bottom:10px;">
+                      Contributed as a Web Developer working on responsive frontend layouts, interactive web components, UI optimization, and web application development best practices.
+                    </p>
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                      <span class="tag">Web Development</span>
+                      <span class="tag">HTML5 / CSS3</span>
+                      <span class="tag">JavaScript</span>
+                      <span class="tag">Responsive UI</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <!-- College Item -->
-              <div class="timeline-item">
-                <div class="timeline-dot">🎓</div>
-                <div class="timeline-content">
-                  <div class="tl-sub">Degree Program</div>
-                  <h4>B.E. / B.Tech in Computer Science &amp; Engineering</h4>
-                  <p>Studying core fundamentals: Data Structures, Algorithms, DBMS with SQL, Object-Oriented Programming (Java/C++), and Web Systems.</p>
+                <!-- Tools Arsenal -->
+                <div style="margin-top:2.5rem;">
+                  <h3 style="margin-bottom:1rem;">Tools &amp; Development Arsenal</h3>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+                    <span class="skill-pill">VS Code</span>
+                    <span class="skill-pill">Git &amp; GitHub</span>
+                    <span class="skill-pill">MySQL Workbench</span>
+                    <span class="skill-pill">Linux / Terminal</span>
+                    <span class="skill-pill">Arduino IDE</span>
+                    <span class="skill-pill">Postman</span>
+                    <span class="skill-pill">Vercel</span>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Projects -->
-              <div class="timeline-item">
-                <div class="timeline-dot">📚</div>
-                <div class="timeline-content">
-                  <div class="tl-sub">Web Application Project</div>
-                  <h4>Library Management System</h4>
-                  <p>Engineered an automated library portal handling catalogue indexing, member circulation, and fine management powered by SQL.</p>
+                <!-- Timeline -->
+                <div class="timeline" style="margin-top:3rem;">
+                  <h3 style="margin-bottom:1.5rem;">Career &amp; Academic Timeline</h3>
+
+                  <!-- Internship Item -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot" style="border-color:var(--accent);">💼</div>
+                    <div class="timeline-content">
+                      <div class="tl-sub">Work Experience · Internship</div>
+                      <h4>Web Developer — NVSKZEN INSTITUTE PRIVATE LIMITED</h4>
+                      <p>Developed modern, responsive web application interfaces, implemented styling architectures, and integrated interactive UI logic.</p>
+                    </div>
+                  </div>
+
+                  <!-- College Item -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot">🎓</div>
+                    <div class="timeline-content">
+                      <div class="tl-sub">Degree Program</div>
+                      <h4>B.E. / B.Tech in Computer Science &amp; Engineering</h4>
+                      <p>Studying core fundamentals: Data Structures, Algorithms, DBMS with SQL, Object-Oriented Programming (Java/C++), and Web Systems.</p>
+                    </div>
+                  </div>
+
+                  <!-- Projects -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot">📚</div>
+                    <div class="timeline-content">
+                      <div class="tl-sub">Web Application Project</div>
+                      <h4>Library Management System</h4>
+                      <p>Engineered an automated library portal handling catalogue indexing, member circulation, and fine management powered by SQL.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot">🍽️</div>
+                    <div class="timeline-content">
+                      <div class="tl-sub">Full-Stack Project</div>
+                      <h4>Restaurant Web Application with SQL</h4>
+                      <p>Created real-time menu ordering, table reservation tracking, and kitchen inventory status with React and SQL backend.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot">🤖</div>
+                    <div class="timeline-content">
+                      <div class="tl-sub">IoT &amp; AI Integration</div>
+                      <h4>IoT AI Chatbot for Bluetooth Hardware Control</h4>
+                      <p>Engineered voice/text AI natural language processing in Python paired with low-latency C/C++ embedded Bluetooth drivers.</p>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
 
-              <div class="timeline-item">
-                <div class="timeline-dot">🍽️</div>
-                <div class="timeline-content">
-                  <div class="tl-sub">Full-Stack Project</div>
-                  <h4>Restaurant Web Application with SQL</h4>
-                  <p>Created real-time menu ordering, table reservation tracking, and kitchen inventory status with React and SQL backend.</p>
-                </div>
               </div>
-
-              <div class="timeline-item">
-                <div class="timeline-dot">🤖</div>
-                <div class="timeline-content">
-                  <div class="tl-sub">IoT &amp; AI Integration</div>
-                  <h4>IoT AI Chatbot for Bluetooth Hardware Control</h4>
-                  <p>Engineered voice/text AI natural language processing in Python paired with low-latency C/C++ embedded Bluetooth drivers.</p>
-                </div>
-              </div>
-
             </div>
 
           </div>

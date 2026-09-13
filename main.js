@@ -349,18 +349,25 @@
     }
   });
 
-  // ─── MAILBOX SKILLS THEME SYSTEM ─────────────
-  document.querySelectorAll('.skills-mailbox-vault').forEach(vault => {
-    const toggleBtn = vault.querySelector('.mailbox-interactive-hub, #mailbox-toggle-btn');
-    const contentGrid = vault.querySelector('.skills-mailbox-content, #skills-mailbox-grid');
-    const iconEl = vault.querySelector('#mailbox-icon');
-    const labelEl = vault.querySelector('#mailbox-btn-label');
-    const statusTag = vault.querySelector('#mailbox-status-tag');
-    const badgeEl = vault.querySelector('#mailbox-badge');
+  // ─── INTERACTIVE THEME VAULT CONTROLLER (MAILBOX, LAUNCH BAY, DOSSIER, COMMS, CHIP DECK) ──
+  document.querySelectorAll('.skills-mailbox-vault, .interactive-theme-vault').forEach(vault => {
+    const toggleBtn = vault.querySelector('.mailbox-interactive-hub, .theme-vault-hub, #mailbox-toggle-btn');
+    const contentGrid = vault.querySelector('.skills-mailbox-content, .theme-vault-content, #skills-mailbox-grid');
+    const iconEl = vault.querySelector('#mailbox-icon, .theme-vault-icon');
+    const labelEl = vault.querySelector('#mailbox-btn-label, .theme-vault-btn-label');
+    const statusTag = vault.querySelector('#mailbox-status-tag, .theme-vault-status-tag');
+    const badgeEl = vault.querySelector('#mailbox-badge, .theme-vault-count-pill');
 
     if (!toggleBtn || !contentGrid) return;
 
-    function toggleMailbox(e) {
+    const closedIcon = vault.dataset.closedIcon || (iconEl ? iconEl.textContent.trim() : '📫');
+    const openIcon = vault.dataset.openIcon || '📬';
+    const closedLabel = vault.dataset.closedLabel || (labelEl ? labelEl.textContent.trim() : 'Open Vault');
+    const openLabel = vault.dataset.openLabel || 'Close Vault';
+    const closedStatus = vault.dataset.closedStatus || (statusTag ? statusTag.textContent.trim() : 'Vault Sealed');
+    const openStatus = vault.dataset.openStatus || 'Vault Unlocked · Contents Deployed';
+
+    function toggleVault(e) {
       if (e) {
         if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
         if (e.type === 'keydown') e.preventDefault();
@@ -368,27 +375,29 @@
 
       playClickSound('button');
       const isOpen = contentGrid.classList.toggle('open');
+      if (contentGrid.classList.contains('services-grid') || contentGrid.classList.contains('projects-grid')) {
+        contentGrid.classList.toggle('grid-open', isOpen);
+      }
       toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       contentGrid.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
 
       if (isOpen) {
-        if (iconEl) iconEl.textContent = '📬';
-        if (labelEl) labelEl.textContent = '📪 Close Mailbox';
-        if (statusTag) statusTag.innerHTML = 'Mailbox Unlocked · Envelopes Delivered';
+        if (iconEl) iconEl.textContent = openIcon;
+        if (labelEl) labelEl.textContent = openLabel;
+        if (statusTag) statusTag.innerHTML = openStatus;
         if (badgeEl) badgeEl.style.display = 'none';
         vault.classList.add('vault-opened');
       } else {
-        if (iconEl) iconEl.textContent = '📫';
-        const count = badgeEl ? badgeEl.textContent : 'Skills';
-        if (labelEl) labelEl.textContent = `🔓 Open Mailbox (${count})`;
-        if (statusTag) statusTag.innerHTML = `Mailbox Sealed · ${count} Inside`;
+        if (iconEl) iconEl.textContent = closedIcon;
+        if (labelEl) labelEl.textContent = closedLabel;
+        if (statusTag) statusTag.innerHTML = closedStatus;
         if (badgeEl) badgeEl.style.display = 'inline-block';
         vault.classList.remove('vault-opened');
       }
     }
 
-    toggleBtn.addEventListener('click', toggleMailbox);
-    toggleBtn.addEventListener('keydown', toggleMailbox);
+    toggleBtn.addEventListener('click', toggleVault);
+    toggleBtn.addEventListener('keydown', toggleVault);
   });
 
   // ─── BACK TO TOP ──────────────────────────────

@@ -58,198 +58,229 @@
     </header>
     <div class="page-divider container"></div>
 
-    <!-- PROJECTS LIST -->
+    <!-- PROJECTS LIST WITH INTERACTIVE LAUNCH BAY THEME -->
     <section class="section" style="padding-top:0">
-      <div class="container" style="display:flex;flex-direction:column;gap:var(--s5);">
+      <div class="container" style="display:flex;flex-direction:column;gap:var(--s4);">
 
-        <!-- ══════════════ PROJECT 1 ══════════════ -->
-        <article class="card fade-up" id="proj-1" style="padding:var(--s5);">
-          <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
-            <div class="project-thumb thumb-library" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
-              📚
+        <!-- ════════════ INTERACTIVE PROJECT LAUNCH BAY VAULT ════════════ -->
+        <div class="interactive-theme-vault projects-launch-vault fade-up" id="projects-launch-vault"
+             data-closed-icon="🚀"
+             data-open-icon="🛰️"
+             data-closed-label="🚀 Open Launch Bay (3 Blueprints)"
+             data-open-label="🔒 Seal Project Hangar"
+             data-closed-status="Project Hangar Sealed · 3 Engineering Blueprints Primed"
+             data-open-status="Launch Bay Active · 3 Blueprints Deployed">
+          
+          <div class="theme-vault-hub" role="button" tabindex="0" aria-expanded="false" aria-controls="projects-launch-content" aria-label="Toggle Project Launch Bay">
+            <div class="theme-vault-icon-wrap" aria-hidden="true">
+              <span class="theme-vault-icon">🚀</span>
+              <span class="theme-vault-count-pill">3 Projects</span>
             </div>
-            <div>
-              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
-                <div class="project-num">Featured Project 01</div>
-                <span class="badge badge-live">Completed · Production Ready</span>
-              </div>
-              <h2 style="font-size:1.6rem;margin-bottom:.8rem;">Library Management System</h2>
-              <p style="margin-bottom:var(--s3);line-height:1.75;">
-                A comprehensive, database-backed web application built to automate library administrative tasks.
-                The application features book inventory tracking with search and category filtering, member registry,
-                borrowing and return lifecycle workflows, automatic fine calculations for overdue returns, and an admin
-                analytics dashboard for circulation reporting.
-              </p>
+            <div class="theme-vault-title-wrap">
+              <div class="theme-vault-status-tag">Project Hangar Sealed · 3 Engineering Blueprints Primed</div>
+              <h3 style="margin-top:8px;">Software Engineering Launch Bay</h3>
+              <p>Contains: Library Management System, Restaurant Web App with SQL, and IoT AI Chatbot.</p>
+            </div>
+            <button class="theme-vault-action-btn" type="button">
+              <span class="theme-vault-btn-label">🚀 Open Launch Bay (3 Blueprints)</span>
+              <span aria-hidden="true">➔</span>
+            </button>
+          </div>
 
-              <!-- Architecture Highlights -->
-              <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
-                <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
-                  System Architecture &amp; Features
-                </strong>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Normalized SQL Schema
+          <!-- ════════════ THE 3 RELEASED DETAILED PROJECTS ════════════ -->
+          <div class="theme-vault-content" id="projects-launch-content" aria-hidden="true" style="display:none;flex-direction:column;gap:var(--s5);text-align:left;">
+
+            <!-- ══════════════ PROJECT 1 ══════════════ -->
+            <article class="card" id="proj-1" style="padding:var(--s5);margin-bottom:var(--s4);">
+              <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
+                <div class="project-thumb thumb-library" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
+                  📚
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+                    <div class="project-num">Featured Project 01</div>
+                    <span class="badge badge-live">Completed · Production Ready</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Member &amp; Book CRUD
+                  <h2 style="font-size:1.6rem;margin-bottom:.8rem;">Library Management System</h2>
+                  <p style="margin-bottom:var(--s3);line-height:1.75;">
+                    A comprehensive, database-backed web application built to automate library administrative tasks.
+                    The application features book inventory tracking with search and category filtering, member registry,
+                    borrowing and return lifecycle workflows, automatic fine calculations for overdue returns, and an admin
+                    analytics dashboard for circulation reporting.
+                  </p>
+
+                  <!-- Architecture Highlights -->
+                  <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
+                    <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
+                      System Architecture &amp; Features
+                    </strong>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Normalized SQL Schema
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Member &amp; Book CRUD
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Borrow &amp; Return Lifecycle
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Automatic Overdue Calculations
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Responsive Web Interface
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Administrative Reporting
+                      </div>
+                    </div>
                   </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Borrow &amp; Return Lifecycle
+
+                  <div class="project-tags" style="margin-bottom:var(--s3);">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL Database</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Web Application</span>
+                    <span class="tag">Relational DBMS</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Automatic Overdue Calculations
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Responsive Web Interface
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Administrative Reporting
+
+                  <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
+                    <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                      View Code on GitHub ↗
+                    </a>
                   </div>
                 </div>
               </div>
+            </article>
 
-              <div class="project-tags" style="margin-bottom:var(--s3);">
-                <span class="tag">Python</span>
-                <span class="tag">SQL Database</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">Web Application</span>
-                <span class="tag">Relational DBMS</span>
-              </div>
+            <!-- ══════════════ PROJECT 2 ══════════════ -->
+            <article class="card" id="proj-2" style="padding:var(--s5);margin-bottom:var(--s4);">
+              <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
+                <div class="project-thumb thumb-restaurant" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
+                  🍽️
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+                    <div class="project-num">Featured Project 02</div>
+                    <span class="badge badge-live">Completed · Full-Stack</span>
+                  </div>
+                  <h2 style="font-size:1.6rem;margin-bottom:.8rem;">Restaurant Web Application with SQL</h2>
+                  <p style="margin-bottom:var(--s3);line-height:1.75;">
+                    A full-stack restaurant software platform offering end-to-end management for both customers and staff.
+                    Includes responsive menu discovery with item categories, live table booking, online cart and order placement,
+                    and a backend powered by SQL to maintain order status, customer history, and seating schedules.
+                  </p>
 
-              <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
-                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View Code on GitHub ↗
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
+                  <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
+                    <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
+                      System Architecture &amp; Features
+                    </strong>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Dynamic Menu Ordering
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Live Table Reservation
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Relational Schema
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Order Status Flow
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Responsive Layout
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Cart State Management
+                      </div>
+                    </div>
+                  </div>
 
-        <!-- ══════════════ PROJECT 2 ══════════════ -->
-        <article class="card fade-up" id="proj-2" style="padding:var(--s5);">
-          <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
-            <div class="project-thumb thumb-restaurant" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
-              🍽️
-            </div>
-            <div>
-              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
-                <div class="project-num">Featured Project 02</div>
-                <span class="badge badge-live">Completed · Full-Stack</span>
-              </div>
-              <h2 style="font-size:1.6rem;margin-bottom:.8rem;">Restaurant Web Application with SQL</h2>
-              <p style="margin-bottom:var(--s3);line-height:1.75;">
-                A full-stack restaurant software platform offering end-to-end management for both customers and staff.
-                Includes responsive menu discovery with item categories, live table booking, online cart and order placement,
-                and a backend powered by SQL to maintain order status, customer history, and seating schedules.
-              </p>
+                  <div class="project-tags" style="margin-bottom:var(--s3);">
+                    <span class="tag">SQL Database</span>
+                    <span class="tag">Web Application</span>
+                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">Relational Design</span>
+                    <span class="tag">Full-Stack</span>
+                  </div>
 
-              <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
-                <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
-                  System Architecture &amp; Features
-                </strong>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Interactive Menu Catalog
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Table Reservation Pipeline
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Real-Time Order Management
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Relational SQL Transaction Store
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Dynamic React State Flow
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Kitchen &amp; Waitstaff Dashboard
+                  <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
+                    <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                      View Code on GitHub ↗
+                    </a>
                   </div>
                 </div>
               </div>
+            </article>
 
-              <div class="project-tags" style="margin-bottom:var(--s3);">
-                <span class="tag">SQL Database</span>
-                <span class="tag">Python</span>
-                <span class="tag">React</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">Full-Stack</span>
-              </div>
+            <!-- ══════════════ PROJECT 3 ══════════════ -->
+            <article class="card" id="proj-3" style="padding:var(--s5);">
+              <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
+                <div class="project-thumb thumb-iot" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
+                  🤖
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+                    <div class="project-num">Featured Project 03</div>
+                    <span class="badge badge-iot">IoT · AI · Hardware</span>
+                  </div>
+                  <h2 style="font-size:1.6rem;margin-bottom:.8rem;">IoT AI Chatbot for Bluetooth Hardware Control</h2>
+                  <p style="margin-bottom:var(--s3);line-height:1.75;">
+                    An integrated hardware-software solution enabling natural language interaction with physical IoT devices.
+                    Users converse with a chatbot interface that parses spoken or typed intent using Python NLP and dispatches
+                    low-latency command packets over Bluetooth to embedded C/C++ microcontroller firmware.
+                  </p>
 
-              <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
-                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View Code on GitHub ↗
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
+                  <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
+                    <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
+                      System Architecture &amp; Features
+                    </strong>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Natural Language Parsing (NLP)
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Bluetooth Serial Protocol
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> C/C++ Firmware Driver
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Low-Latency Device Execution
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Conversational UI Interface
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
+                        <span style="color:var(--green);font-weight:700;">✓</span> Real-Time Hardware State Telemetry
+                      </div>
+                    </div>
+                  </div>
 
-        <!-- ══════════════ PROJECT 3 ══════════════ -->
-        <article class="card fade-up" id="proj-3" style="padding:var(--s5);">
-          <div style="display:grid;grid-template-columns:260px 1fr;gap:var(--s4);align-items:start;">
-            <div class="project-thumb thumb-iot" style="height:220px;border-radius:var(--radius-m);" aria-hidden="true">
-              🤖
-            </div>
-            <div>
-              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
-                <div class="project-num">Featured Project 03</div>
-                <span class="badge badge-iot">IoT · AI · Hardware</span>
-              </div>
-              <h2 style="font-size:1.6rem;margin-bottom:.8rem;">IoT AI Chatbot for Bluetooth Hardware Control</h2>
-              <p style="margin-bottom:var(--s3);line-height:1.75;">
-                An integrated hardware-software solution enabling natural language interaction with physical IoT devices.
-                Users converse with a chatbot interface that parses spoken or typed intent using Python NLP and dispatches
-                low-latency command packets over Bluetooth to embedded C/C++ microcontroller firmware.
-              </p>
+                  <div class="project-tags" style="margin-bottom:var(--s3);">
+                    <span class="tag">Python</span>
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Bluetooth / BLE</span>
+                    <span class="tag">AI &amp; NLP</span>
+                    <span class="tag">IoT Automation</span>
+                  </div>
 
-              <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:var(--s3);margin-bottom:var(--s3);">
-                <strong style="font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px;">
-                  System Architecture &amp; Features
-                </strong>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Natural Language Parsing (NLP)
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Bluetooth Serial Protocol
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> C/C++ Firmware Driver
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Low-Latency Device Execution
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Conversational UI Interface
-                  </div>
-                  <div style="display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--text);">
-                    <span style="color:var(--green);font-weight:700;">✓</span> Real-Time Hardware State Telemetry
+                  <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
+                    <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                      View Code on GitHub ↗
+                    </a>
                   </div>
                 </div>
               </div>
+            </article>
 
-              <div class="project-tags" style="margin-bottom:var(--s3);">
-                <span class="tag">Python</span>
-                <span class="tag">C</span>
-                <span class="tag">C++</span>
-                <span class="tag">Bluetooth / BLE</span>
-                <span class="tag">AI &amp; NLP</span>
-                <span class="tag">IoT Automation</span>
-              </div>
-
-              <div style="display:flex;gap:var(--s2);flex-wrap:wrap;">
-                <a href="https://github.com/Gouthamdc2007" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  View Code on GitHub ↗
-                </a>
-              </div>
-            </div>
           </div>
-        </article>
+        </div>
 
         <!-- CTA SECTION -->
         <div class="cta-banner fade-up" style="margin-top:2rem;">

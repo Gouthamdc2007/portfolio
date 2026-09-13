@@ -1229,6 +1229,278 @@ p {
   opacity: 1;
 }
 
+/* ================================================================
+   10C. PAGE-SPECIFIC INTERACTIVE THEME VAULTS
+   ================================================================ */
+
+/* Common Interactive Vault Container */
+.interactive-theme-vault {
+  backdrop-filter: blur(24px) saturate(190%);
+  border-radius: var(--radius-l);
+  padding: var(--s4) var(--s5);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--s4);
+  transition: all 0.4s var(--ease);
+}
+
+.theme-vault-hub {
+  cursor: pointer;
+  padding: var(--s2) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.theme-vault-icon-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s;
+}
+
+.interactive-theme-vault:hover .theme-vault-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.theme-vault-count-pill {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-x);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  animation: pulseMailBadge 2.2s infinite;
+}
+
+.theme-vault-title-wrap h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.theme-vault-title-wrap p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.theme-vault-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 18px;
+  border-radius: var(--radius-x);
+}
+
+.theme-vault-status-tag::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
+}
+
+.theme-vault-action-btn {
+  margin-top: var(--s2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  border-radius: var(--radius-x);
+  color: #030712;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+
+.theme-vault-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.theme-vault-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  margin-top: var(--s4);
+}
+
+.theme-vault-content.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.theme-vault-content.grid-open {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1. SKILLS PAGE: Cyber Matrix Skill Deck Vault (Green & Cyan) */
+.skills-deck-vault {
+  background: linear-gradient(135deg, rgba(8, 28, 26, 0.82) 0%, rgba(5, 18, 22, 0.95) 100%);
+  border: 1.5px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(16, 185, 129, 0.18);
+}
+.skills-deck-vault::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #10b981 0%, #00f2fe 50%, #3b82f6 100%);
+}
+.skills-deck-vault .theme-vault-icon-wrap {
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+.skills-deck-vault .theme-vault-count-pill {
+  background: linear-gradient(135deg, #10b981, #00f2fe);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+.skills-deck-vault .theme-vault-status-tag {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+}
+.skills-deck-vault .theme-vault-action-btn {
+  background: linear-gradient(135deg, #10b981 0%, #00f2fe 100%);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+.skills-deck-vault .theme-vault-action-btn:hover {
+  box-shadow: 0 0 45px rgba(16, 185, 129, 0.6);
+}
+
+/* 2. PROJECTS PAGE: Launch Bay & Blueprint Vault (Electric Blue & Indigo) */
+.projects-launch-vault {
+  background: linear-gradient(135deg, rgba(14, 24, 56, 0.85) 0%, rgba(7, 12, 32, 0.95) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.2);
+}
+.projects-launch-vault::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+}
+.projects-launch-vault .theme-vault-icon-wrap {
+  background: rgba(56, 189, 248, 0.1);
+  border: 2px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+}
+.projects-launch-vault .theme-vault-count-pill {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+.projects-launch-vault .theme-vault-status-tag {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+.projects-launch-vault .theme-vault-action-btn {
+  background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+.projects-launch-vault .theme-vault-action-btn:hover {
+  box-shadow: 0 0 45px rgba(56, 189, 248, 0.6);
+}
+
+/* 3. ABOUT PAGE: Classified Dossier & Time Capsule (Digital Amber & Cyan) */
+.dossier-capsule-vault {
+  background: linear-gradient(135deg, rgba(32, 22, 10, 0.82) 0%, rgba(14, 10, 6, 0.95) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(245, 158, 11, 0.18);
+}
+.dossier-capsule-vault::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #f59e0b 0%, #00f2fe 50%, #e11d48 100%);
+}
+.dossier-capsule-vault .theme-vault-icon-wrap {
+  background: rgba(245, 158, 11, 0.1);
+  border: 2px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+}
+.dossier-capsule-vault .theme-vault-count-pill {
+  background: linear-gradient(135deg, #f59e0b, #e11d48);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+}
+.dossier-capsule-vault .theme-vault-status-tag {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+.dossier-capsule-vault .theme-vault-action-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #00f2fe 100%);
+  color: #030712;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+}
+.dossier-capsule-vault .theme-vault-action-btn:hover {
+  box-shadow: 0 0 45px rgba(245, 158, 11, 0.6);
+}
+
+/* 4. CONTACT PAGE: Sub-Space Transmission Relay (Cosmic Purple & Neon Cyan) */
+.comms-relay-vault {
+  background: linear-gradient(135deg, rgba(28, 14, 48, 0.85) 0%, rgba(12, 6, 24, 0.95) 100%);
+  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(168, 85, 247, 0.2);
+}
+.comms-relay-vault::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #a855f7 0%, #00f2fe 50%, #ec4899 100%);
+}
+.comms-relay-vault .theme-vault-icon-wrap {
+  background: rgba(168, 85, 247, 0.1);
+  border: 2px solid rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+}
+.comms-relay-vault .theme-vault-count-pill {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+.comms-relay-vault .theme-vault-status-tag {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+}
+.comms-relay-vault .theme-vault-action-btn {
+  background: linear-gradient(135deg, #a855f7 0%, #00f2fe 100%);
+  color: #030712;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+.comms-relay-vault .theme-vault-action-btn:hover {
+  box-shadow: 0 0 45px rgba(168, 85, 247, 0.6);
+}
+
 .envelope-header {
   display: flex;
   align-items: center;
