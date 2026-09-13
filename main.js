@@ -349,6 +349,48 @@
     }
   });
 
+  // ─── MAILBOX SKILLS THEME SYSTEM ─────────────
+  document.querySelectorAll('.skills-mailbox-vault').forEach(vault => {
+    const toggleBtn = vault.querySelector('.mailbox-interactive-hub, #mailbox-toggle-btn');
+    const contentGrid = vault.querySelector('.skills-mailbox-content, #skills-mailbox-grid');
+    const iconEl = vault.querySelector('#mailbox-icon');
+    const labelEl = vault.querySelector('#mailbox-btn-label');
+    const statusTag = vault.querySelector('#mailbox-status-tag');
+    const badgeEl = vault.querySelector('#mailbox-badge');
+
+    if (!toggleBtn || !contentGrid) return;
+
+    function toggleMailbox(e) {
+      if (e) {
+        if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        if (e.type === 'keydown') e.preventDefault();
+      }
+
+      playClickSound('button');
+      const isOpen = contentGrid.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      contentGrid.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+      if (isOpen) {
+        if (iconEl) iconEl.textContent = '📬';
+        if (labelEl) labelEl.textContent = '📪 Close Mailbox';
+        if (statusTag) statusTag.innerHTML = 'Mailbox Unlocked · Envelopes Delivered';
+        if (badgeEl) badgeEl.style.display = 'none';
+        vault.classList.add('vault-opened');
+      } else {
+        if (iconEl) iconEl.textContent = '📫';
+        const count = badgeEl ? badgeEl.textContent : 'Skills';
+        if (labelEl) labelEl.textContent = `🔓 Open Mailbox (${count})`;
+        if (statusTag) statusTag.innerHTML = `Mailbox Sealed · ${count} Inside`;
+        if (badgeEl) badgeEl.style.display = 'inline-block';
+        vault.classList.remove('vault-opened');
+      }
+    }
+
+    toggleBtn.addEventListener('click', toggleMailbox);
+    toggleBtn.addEventListener('keydown', toggleMailbox);
+  });
+
   // ─── BACK TO TOP ──────────────────────────────
   const backBtn = document.getElementById('back-to-top');
   if (backBtn) {

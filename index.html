@@ -154,121 +154,112 @@
     <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Interactive Technology Stack</div>
+          <div class="section-tag">Interactive Mailbox Theme</div>
           <h2 id="services-heading" class="section-title">Core Skills &amp; Capabilities</h2>
-          <p class="section-desc">Click any capability postcard box below to reveal detailed technical skills, tools, and architecture specs.</p>
+          <p class="section-desc">My 5 core technical skill categories are stored inside the mailbox below. Click the mailbox to unlock and release them.</p>
         </div>
 
-        <div class="services-grid">
-
-          <!-- 1. Programming Postcard Box -->
-          <div class="postcard-box fade-up" data-modal-target="skill-modal-programming" role="button" tabindex="0" aria-label="Open Programming Skills Postcard">
-            <div class="postcard-stamp">
-              <span class="stamp-code">GK-01</span>
-              <span class="stamp-icon">💻</span>
+        <!-- ════════════ INTERACTIVE MAILBOX VAULT ════════════ -->
+        <div class="skills-mailbox-vault fade-up" id="skills-mailbox-vault">
+          <div class="mailbox-interactive-hub" id="mailbox-toggle-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="skills-mailbox-grid" aria-label="Toggle Skills Mailbox">
+            <div class="mailbox-icon-wrap" aria-hidden="true">
+              <span id="mailbox-icon">📫</span>
+              <span class="mailbox-count-pill" id="mailbox-badge">5 Skills</span>
             </div>
-            <div class="postcard-seal"></div>
-            <div class="service-icon" aria-hidden="true">💻</div>
-            <h3>Programming</h3>
-            <p>Writing clean, efficient, object-oriented code with deep understanding of data structures, memory management, and algorithm optimization.</p>
-            <div class="service-tags" style="margin-bottom:var(--s2);">
-              <span class="service-tag-item">Java</span>
-              <span class="service-tag-item">Python</span>
-              <span class="service-tag-item">C</span>
-              <span class="service-tag-item">C++</span>
+            <div class="mailbox-title-wrap">
+              <div class="mailbox-status-tag" id="mailbox-status-tag">Mailbox Sealed · 5 Envelopes Inside</div>
+              <h3 style="margin-top:8px;">Developer Skills Mailbox</h3>
+              <p>Contains: Programming, Web Development, Backend Engineering, Databases, and IoT Systems.</p>
             </div>
-            <div class="postcard-prompt">
-              <span>📬 Open Postcard</span>
-              <span class="postcard-arrow">➔</span>
-            </div>
+            <button class="mailbox-action-btn" id="mailbox-btn-text" type="button">
+              <span id="mailbox-btn-label">🔓 Open Mailbox (5 Skills)</span>
+              <span aria-hidden="true">➔</span>
+            </button>
           </div>
 
-          <!-- 2. Web Development Postcard Box -->
-          <div class="postcard-box fade-up" data-modal-target="skill-modal-web" role="button" tabindex="0" aria-label="Open Web Development Skills Postcard">
-            <div class="postcard-stamp">
-              <span class="stamp-code">GK-02</span>
-              <span class="stamp-icon">🌐</span>
-            </div>
-            <div class="postcard-seal"></div>
-            <div class="service-icon" aria-hidden="true">🌐</div>
-            <h3>Web Development</h3>
-            <p>Crafting high-performance, accessible, and responsive user interfaces with modular component architectures and modern CSS systems.</p>
-            <div class="service-tags" style="margin-bottom:var(--s2);">
-              <span class="service-tag-item">React</span>
-              <span class="service-tag-item">CSS3</span>
-              <span class="service-tag-item">Responsive UI</span>
-              <span class="service-tag-item">Modern Layouts</span>
-            </div>
-            <div class="postcard-prompt">
-              <span>📬 Open Postcard</span>
-              <span class="postcard-arrow">➔</span>
-            </div>
-          </div>
+          <!-- ════════════ THE 5 RELEASED SKILL CARDS ════════════ -->
+          <div class="skills-mailbox-content services-grid" id="skills-mailbox-grid" aria-hidden="true">
 
-          <!-- 3. Backend Engineering Postcard Box -->
-          <div class="postcard-box fade-up" data-modal-target="skill-modal-backend" role="button" tabindex="0" aria-label="Open Backend Engineering Skills Postcard">
-            <div class="postcard-stamp">
-              <span class="stamp-code">GK-03</span>
-              <span class="stamp-icon">⚙️</span>
+            <!-- 1. Programming Envelope -->
+            <div class="skill-envelope-card">
+              <div class="envelope-header">
+                <div class="service-icon" style="margin-bottom:0;" aria-hidden="true">💻</div>
+                <span class="envelope-badge">Envelope #01</span>
+              </div>
+              <h3>Programming</h3>
+              <p>Writing clean, efficient, object-oriented code with deep understanding of data structures, memory management, and algorithm optimization.</p>
+              <div class="service-tags" style="margin-top:auto;">
+                <span class="service-tag-item">Java</span>
+                <span class="service-tag-item">Python</span>
+                <span class="service-tag-item">C</span>
+                <span class="service-tag-item">C++</span>
+              </div>
             </div>
-            <div class="postcard-seal"></div>
-            <div class="service-icon" aria-hidden="true">⚙️</div>
-            <h3>Backend Engineering</h3>
-            <p>Designing structured server-side logic in Python and Java. Creating high-performance routines and clean business logic.</p>
-            <div class="service-tags" style="margin-bottom:var(--s2);">
-              <span class="service-tag-item">Python</span>
-              <span class="service-tag-item">Java</span>
-              <span class="service-tag-item">REST API</span>
-              <span class="service-tag-item">OOP Design</span>
-            </div>
-            <div class="postcard-prompt">
-              <span>📬 Open Postcard</span>
-              <span class="postcard-arrow">➔</span>
-            </div>
-          </div>
 
-          <!-- 4. Database Architecture Postcard Box -->
-          <div class="postcard-box fade-up" data-modal-target="skill-modal-database" role="button" tabindex="0" aria-label="Open Database Architecture Skills Postcard">
-            <div class="postcard-stamp">
-              <span class="stamp-code">GK-04</span>
-              <span class="stamp-icon">🗄️</span>
+            <!-- 2. Web Development Envelope -->
+            <div class="skill-envelope-card">
+              <div class="envelope-header">
+                <div class="service-icon" style="margin-bottom:0;" aria-hidden="true">🌐</div>
+                <span class="envelope-badge">Envelope #02</span>
+              </div>
+              <h3>Web Development</h3>
+              <p>Crafting high-performance, accessible, and responsive user interfaces with modular component architectures and modern CSS systems.</p>
+              <div class="service-tags" style="margin-top:auto;">
+                <span class="service-tag-item">React</span>
+                <span class="service-tag-item">CSS3</span>
+                <span class="service-tag-item">Responsive UI</span>
+                <span class="service-tag-item">Modern Layouts</span>
+              </div>
             </div>
-            <div class="postcard-seal"></div>
-            <div class="service-icon" aria-hidden="true">🗄️</div>
-            <h3>Database Architecture</h3>
-            <p>Architecting relational database schemas, writing optimized queries, and ensuring data consistency across transactions.</p>
-            <div class="service-tags" style="margin-bottom:var(--s2);">
-              <span class="service-tag-item">SQL</span>
-              <span class="service-tag-item">Database Design</span>
-              <span class="service-tag-item">Schema Modeling</span>
-              <span class="service-tag-item">CRUD</span>
-            </div>
-            <div class="postcard-prompt">
-              <span>📬 Open Postcard</span>
-              <span class="postcard-arrow">➔</span>
-            </div>
-          </div>
 
-          <!-- 5. IoT & Embedded Systems Postcard Box -->
-          <div class="postcard-box fade-up" data-modal-target="skill-modal-iot" role="button" tabindex="0" aria-label="Open IoT & Embedded Systems Skills Postcard">
-            <div class="postcard-stamp">
-              <span class="stamp-code">GK-05</span>
-              <span class="stamp-icon">🤖</span>
+            <!-- 3. Backend Engineering Envelope -->
+            <div class="skill-envelope-card">
+              <div class="envelope-header">
+                <div class="service-icon" style="margin-bottom:0;" aria-hidden="true">⚙️</div>
+                <span class="envelope-badge">Envelope #03</span>
+              </div>
+              <h3>Backend Engineering</h3>
+              <p>Designing structured server-side logic in Python and Java. Creating high-performance routines and clean business logic.</p>
+              <div class="service-tags" style="margin-top:auto;">
+                <span class="service-tag-item">Python</span>
+                <span class="service-tag-item">Java</span>
+                <span class="service-tag-item">REST API</span>
+                <span class="service-tag-item">OOP Design</span>
+              </div>
             </div>
-            <div class="postcard-seal"></div>
-            <div class="service-icon" aria-hidden="true">🤖</div>
-            <h3>IoT &amp; Embedded Systems</h3>
-            <p>Connecting software with physical hardware via Bluetooth protocols, C/C++ firmware integration, and AI natural language control.</p>
-            <div class="service-tags" style="margin-bottom:var(--s2);">
-              <span class="service-tag-item">C / C++</span>
-              <span class="service-tag-item">Bluetooth</span>
-              <span class="service-tag-item">AI / NLP</span>
-              <span class="service-tag-item">Microcontrollers</span>
+
+            <!-- 4. Database Architecture Envelope -->
+            <div class="skill-envelope-card">
+              <div class="envelope-header">
+                <div class="service-icon" style="margin-bottom:0;" aria-hidden="true">🗄️</div>
+                <span class="envelope-badge">Envelope #04</span>
+              </div>
+              <h3>Database Architecture</h3>
+              <p>Architecting relational database schemas, writing optimized queries, and ensuring data consistency across transactions.</p>
+              <div class="service-tags" style="margin-top:auto;">
+                <span class="service-tag-item">SQL</span>
+                <span class="service-tag-item">Database Design</span>
+                <span class="service-tag-item">Schema Modeling</span>
+                <span class="service-tag-item">CRUD</span>
+              </div>
             </div>
-            <div class="postcard-prompt">
-              <span>📬 Open Postcard</span>
-              <span class="postcard-arrow">➔</span>
+
+            <!-- 5. IoT & Embedded Systems Envelope -->
+            <div class="skill-envelope-card">
+              <div class="envelope-header">
+                <div class="service-icon" style="margin-bottom:0;" aria-hidden="true">🤖</div>
+                <span class="envelope-badge">Envelope #05</span>
+              </div>
+              <h3>IoT &amp; Embedded Systems</h3>
+              <p>Connecting software with physical hardware via Bluetooth protocols, C/C++ firmware integration, and AI natural language control.</p>
+              <div class="service-tags" style="margin-top:auto;">
+                <span class="service-tag-item">C / C++</span>
+                <span class="service-tag-item">Bluetooth</span>
+                <span class="service-tag-item">AI / NLP</span>
+                <span class="service-tag-item">Microcontrollers</span>
+              </div>
             </div>
+
           </div>
 
         </div>
