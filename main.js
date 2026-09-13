@@ -90,64 +90,75 @@
     }
   }, { capture: true, passive: true });
 
-  // ─── CUSTOM CURSOR ───────────────────────────
+  // ─── AMBIENT CURSOR GLOW FOLLOWER ─────────────
   const cursorDot  = document.getElementById('cursor-dot');
   const cursorRing = document.getElementById('cursor-ring');
+  const isFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
+  if (isFinePointer && cursorDot && cursorRing) {
+    let mouseX = -100, mouseY = -100;
+    let ringX  = -100, ringY  = -100;
+    let hasMoved = false;
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (cursorDot) {
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!hasMoved) {
+        hasMoved = true;
+        cursorDot.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+        ringX = mouseX;
+        ringY = mouseY;
+      }
       cursorDot.style.left = mouseX + 'px';
       cursorDot.style.top  = mouseY + 'px';
-    }
-  }, { passive: true });
+    }, { passive: true });
 
-  function animateRing() {
-    if (cursorRing) {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      cursorRing.style.left = ringX + 'px';
-      cursorRing.style.top  = ringY + 'px';
+    function animateRing() {
+      if (hasMoved) {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top  = ringY + 'px';
+      }
+      requestAnimationFrame(animateRing);
     }
     requestAnimationFrame(animateRing);
+
+    // Hover states on interactive items
+    const interactives = 'a, button, input, textarea, select, .card, .service-card, .postcard-box, .project-card, .skill-pill, .channel-card, .faq-question, .workflow-step, .stat-item';
+    document.querySelectorAll(interactives).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hovering');
+        cursorRing.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hovering');
+        cursorRing.classList.remove('hovering');
+      });
+    });
+
+    // Press down effect
+    document.addEventListener('mousedown', () => {
+      cursorDot.classList.add('clicking');
+      cursorRing.classList.add('clicking');
+    });
+    document.addEventListener('mouseup', () => {
+      cursorDot.classList.remove('clicking');
+      cursorRing.classList.remove('clicking');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursorDot.style.opacity = '0';
+      cursorRing.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      if (hasMoved) {
+        cursorDot.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+      }
+    });
   }
-  animateRing();
-
-  // Hover states on interactive items
-  const interactives = 'a, button, input, textarea, select, .card, .service-card, .skill-pill, .channel-card, .faq-question, .workflow-step, .stat-item';
-  document.querySelectorAll(interactives).forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (cursorDot)  cursorDot.classList.add('hovering');
-      if (cursorRing) cursorRing.classList.add('hovering');
-    });
-    el.addEventListener('mouseleave', () => {
-      if (cursorDot)  cursorDot.classList.remove('hovering');
-      if (cursorRing) cursorRing.classList.remove('hovering');
-    });
-  });
-
-  // Press down effect
-  document.addEventListener('mousedown', () => {
-    if (cursorDot)  cursorDot.classList.add('clicking');
-    if (cursorRing) cursorRing.classList.add('clicking');
-  });
-  document.addEventListener('mouseup', () => {
-    if (cursorDot)  cursorDot.classList.remove('clicking');
-    if (cursorRing) cursorRing.classList.remove('clicking');
-  });
-
-  document.addEventListener('mouseleave', () => {
-    if (cursorDot)  cursorDot.style.opacity = '0';
-    if (cursorRing) cursorRing.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    if (cursorDot)  cursorDot.style.opacity = '1';
-    if (cursorRing) cursorRing.style.opacity = '1';
-  });
 
   // ─── CLICK RIPPLE ─────────────────────────────
   document.addEventListener('click', (e) => {

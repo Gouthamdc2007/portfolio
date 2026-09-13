@@ -174,6 +174,7 @@ a {
   text-decoration: none;
   color: inherit;
   transition: all var(--dur) var(--ease);
+  cursor: pointer;
 }
 
 ul {
@@ -181,10 +182,10 @@ ul {
 }
 
 button {
-  cursor: none !important;
   border: none;
   background: none;
   font-family: inherit;
+  cursor: pointer;
 }
 
 input, textarea, select {
@@ -192,60 +193,80 @@ input, textarea, select {
   font-family: inherit;
 }
 
-/* Custom Cyber Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-x);
-  border: 2px solid var(--bg);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-  box-shadow: var(--glow-cyan);
+input[type="text"], input[type="email"], textarea {
+  cursor: text;
 }
 
 /* ================================================================
-   3. CUSTOM CYBER CURSOR
+   3. AMBIENT CURSOR GLOW FOLLOWER (NATIVE MOUSE PRESERVED)
    ================================================================ */
-* {
-  cursor: none !important;
+a, button, .btn, .nav-links a, .nav-mobile a, .nav-logo, .social-btn, 
+.card, .service-card, .postcard-box, .project-card, .faq-question, 
+.channel-card, .skill-pill, .modal-close-btn, #back-to-top, [role="button"] {
+  cursor: pointer;
 }
 
 #cursor-dot {
   position: fixed;
   width: 6px;
   height: 6px;
-  background: #ffffff;
+  background: var(--accent);
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 99999;
-  left: 0;
-  top: 0;
+  left: -100px;
+  top: -100px;
   transform: translate(-50%, -50%);
-  transition: width 0.18s var(--ease), height 0.18s var(--ease), background 0.18s, opacity 0.2s;
+  transition: width 0.18s var(--ease), height 0.18s var(--ease), opacity 0.2s;
   will-change: left, top;
   box-shadow: 0 0 10px #ffffff, 0 0 20px var(--accent);
+  opacity: 0;
 }
 
 #cursor-ring {
   position: fixed;
   width: 38px;
   height: 38px;
-  border: 1.5px solid rgba(0, 242, 254, 0.65);
+  border: 1.5px solid rgba(0, 242, 254, 0.45);
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 99998;
-  left: 0;
-  top: 0;
+  left: -100px;
+  top: -100px;
   transform: translate(-50%, -50%);
   transition: width 0.25s var(--ease), height 0.25s var(--ease), border-color 0.25s, background 0.25s, opacity 0.25s;
   will-change: left, top;
   background: rgba(0, 242, 254, 0.02);
+  opacity: 0;
+}
+
+#cursor-dot.clicking {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+#cursor-ring.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+  border-color: var(--accent);
+  background: rgba(0, 242, 254, 0.15);
+}
+
+#cursor-dot.hovering {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+}
+#cursor-ring.hovering {
+  width: 50px;
+  height: 50px;
+  border-color: var(--accent);
+  background: rgba(0, 242, 254, 0.06);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+}
+
+/* Disable custom follower on touch / mobile devices */
+@media (pointer: coarse), (hover: none) {
+  #cursor-dot, #cursor-ring {
+    display: none !important;
+  }
 }
 
 #cursor-dot.clicking {
