@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates — Goutham Kumar SK</title>
+  <meta name="description" content="Professional certifications and achievements of Goutham Kumar SK in Cloud, Cybersecurity, AI, and Data Science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .certs-hero { padding: var(--s8) 0 var(--s5); text-align: center; }
+    .certs-hero-badge { display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);border-radius:100px;padding:.35rem 1.1rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s3); }
+    .certs-title { font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--text-primary);margin-bottom:var(--s2);line-height:1.15; }
+    .certs-title em { font-style:normal;background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .certs-subtitle { color:var(--text-secondary);font-size:1.05rem;max-width:540px;margin:0 auto var(--s5);line-height:1.7; }
+    .certs-stats { display:flex;justify-content:center;gap:var(--s4);flex-wrap:wrap;margin-bottom:var(--s7); }
+    .certs-stat { display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:var(--s2) var(--s3);background:var(--glass-bg);backdrop-filter:blur(14px);border:1px solid var(--glass-border);border-radius:12px;min-width:100px; }
+    .certs-stat-num { font-size:1.6rem;font-weight:800;color:var(--accent); }
+    .certs-stat-label { font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center; }
+    .cert-filters { display:flex;justify-content:center;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s5); }
+    .cert-filter-btn { padding:.45rem 1.1rem;border-radius:100px;border:1px solid var(--glass-border);background:var(--glass-bg);color:var(--text-secondary);font-size:.82rem;cursor:pointer;transition:all .25s ease;letter-spacing:.04em; }
+    .cert-filter-btn:hover,.cert-filter-btn.active { background:rgba(0,212,255,.12);border-color:var(--accent);color:var(--accent); }
+    .certs-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--s4);margin-bottom:var(--s8); }
+    .cert-card { background:var(--glass-bg);backdrop-filter:blur(18px);border:1px solid var(--glass-border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;position:relative; }
+    .cert-card::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.04) 0%,transparent 60%);pointer-events:none;z-index:0;opacity:0;transition:opacity .3s ease; }
+    .cert-card:hover { transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,212,255,.12),0 0 0 1px rgba(0,212,255,.2);border-color:rgba(0,212,255,.35); }
+    .cert-card:hover::before { opacity:1; }
+    .cert-preview { width:100%;height:200px;object-fit:cover;object-position:top center;display:block;background:#0d1117; }
+    .cert-preview-pdf { width:100%;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,212,255,.06) 0%,rgba(94,0,255,.06) 100%);gap:.75rem; }
+    .cert-preview-pdf .pdf-icon { font-size:3.5rem;line-height:1; }
+    .cert-preview-pdf .pdf-label { font-size:.78rem;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase; }
+    .cert-body { padding:var(--s3);position:relative;z-index:1; }
+    .cert-issuer-row { display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem; }
+    .cert-issuer-tag { font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;padding:.2rem .65rem;border-radius:100px;border:1px solid; }
+    .cert-issuer-tag.aws { color:#ff9900;border-color:rgba(255,153,0,.4);background:rgba(255,153,0,.08); }
+    .cert-issuer-tag.forage { color:#4f9cf9;border-color:rgba(79,156,249,.4);background:rgba(79,156,249,.08); }
+    .cert-issuer-tag.infosys { color:#00c7b1;border-color:rgba(0,199,177,.4);background:rgba(0,199,177,.08); }
+    .cert-issuer-tag.deloitte { color:#86c232;border-color:rgba(134,194,50,.4);background:rgba(134,194,50,.08); }
+    .cert-issuer-tag.hp { color:#0096d6;border-color:rgba(0,150,214,.4);background:rgba(0,150,214,.08); }
+    .cert-date-badge { font-size:.68rem;color:var(--text-muted);letter-spacing:.04em; }
+    .cert-name { font-size:1rem;font-weight:700;color:var(--text-primary);line-height:1.35;margin-bottom:.45rem; }
+    .cert-desc { font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin-bottom:var(--s2); }
+    .cert-actions { display:flex;gap:.6rem; }
+    .cert-btn { flex:1;padding:.48rem .8rem;border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .22s ease;display:inline-flex;align-items:center;justify-content:center;gap:.35rem;text-decoration:none; }
+    .cert-btn-view { background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--accent); }
+    .cert-btn-view:hover { background:rgba(0,212,255,.2);border-color:var(--accent); }
+    .cert-btn-dl { background:rgba(255,255,255,.04);border:1px solid var(--glass-border);color:var(--text-secondary); }
+    .cert-btn-dl:hover { background:rgba(255,255,255,.08);color:var(--text-primary); }
+    .cert-lightbox { display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:var(--s3); }
+    .cert-lightbox.open { display:flex; }
+    .cert-lightbox-inner { position:relative;max-width:900px;width:100%;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;animation:certLbIn .28s ease; }
+    @keyframes certLbIn { from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)} }
+    .cert-lightbox-img { width:100%;max-height:75vh;object-fit:contain;background:#0a0e1a;display:block; }
+    .cert-lightbox-bar { padding:var(--s2) var(--s3);display:flex;align-items:center;justify-content:space-between;gap:var(--s2);background:rgba(0,0,0,.4); }
+    .cert-lightbox-title { font-size:.95rem;font-weight:600;color:var(--text-primary); }
+    .cert-lightbox-close { background:rgba(255,255,255,.08);border:1px solid var(--glass-border);color:var(--text-secondary);border-radius:8px;padding:.35rem .8rem;cursor:pointer;font-size:.82rem;transition:all .2s; }
+    .cert-lightbox-close:hover { background:rgba(255,255,255,.15);color:var(--text-primary); }
+    @media(max-width:600px){.certs-grid{grid-template-columns:1fr}.certs-stats{gap:var(--s2)}}
+  </style>
+</head>
+<body>
+  <div class="bg-ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="bg-ambient-glow glow-3" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Goutham Kumar SK Home">
+        <div class="nav-logo-mark">GK</div>
+        <span class="nav-logo-text">Goutham <em>Kumar</em></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certificates.html" class="active">Certificates</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+    <section class="certs-hero container fade-up">
+      <div class="certs-hero-badge"><span>🏆</span> Verified Achievements</div>
+      <h1 class="certs-title">My <em>Certifications</em></h1>
+      <p class="certs-subtitle">Industry-recognized credentials across Cloud Computing, Cybersecurity, AI, and Data Science — earned from globally renowned organizations.</p>
+      <div class="certs-stats">
+        <div class="certs-stat"><span class="certs-stat-num">8</span><span class="certs-stat-label">Certificates</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">6</span><span class="certs-stat-label">Issuers</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">4</span><span class="certs-stat-label">Domains</span></div>
+        <div class="certs-stat"><span class="certs-stat-num">2025</span><span class="certs-stat-label">Latest Year</span></div>
+      </div>
+    </section>
+
+    <div class="container fade-up">
+      <div class="cert-filters">
+        <button class="cert-filter-btn active" data-filter="all">All</button>
+        <button class="cert-filter-btn" data-filter="cloud">☁️ Cloud</button>
+        <button class="cert-filter-btn" data-filter="cyber">🔐 Cybersecurity</button>
+        <button class="cert-filter-btn" data-filter="ai">🤖 AI &amp; Data</button>
+        <button class="cert-filter-btn" data-filter="devops">⚙️ DevOps</button>
+      </div>
+    </div>
+
+    <div class="certs-grid container fade-up" id="certs-grid">
+
+      <div class="cert-card" data-category="cloud" data-title="AWS Certified Cloud Practitioner" data-file="certificates/cert-aws-cloud.pdf" data-type="pdf">
+        <div class="cert-preview-pdf"><div class="pdf-icon">☁️</div><div class="pdf-label">Amazon Web Services</div></div>
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag aws">AWS</span><span class="cert-date-badge">2025</span></div>
+          <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
+          <p class="cert-desc">Foundational cloud certification validating understanding of AWS Cloud concepts, services, security, architecture, pricing, and support.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-aws-cloud.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="devops" data-title="DevOps on AWS" data-file="certificates/cert-aws-devops.pdf" data-type="pdf">
+        <div class="cert-preview-pdf"><div class="pdf-icon">⚙️</div><div class="pdf-label">Amazon Web Services</div></div>
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag aws">AWS</span><span class="cert-date-badge">2025</span></div>
+          <h3 class="cert-name">DevOps on AWS</h3>
+          <p class="cert-desc">Comprehensive training on DevOps practices and tools on AWS, covering CI/CD pipelines, infrastructure as code, monitoring, and automation.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-aws-devops.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="cyber" data-title="Cybersecurity Analyst Job Simulation — TATA" data-file="certificates/cert-tata-cybersecurity.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-tata-cybersecurity.jpg" alt="TATA Cybersecurity Certificate" loading="lazy" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag forage">TATA x Forage</span><span class="cert-date-badge">Aug 2025</span></div>
+          <h3 class="cert-name">Cybersecurity Analyst Job Simulation</h3>
+          <p class="cert-desc">Practical tasks in IAM fundamentals, IAM strategy assessment, crafting custom IAM solutions, and platform integration with TATA Consultancy Services.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-tata-cybersecurity.jpg" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="ai" data-title="Data Visualisation — TATA" data-file="certificates/cert-tata-dataviz.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-tata-dataviz.jpg" alt="TATA Data Visualisation Certificate" loading="lazy" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag forage">TATA x Forage</span><span class="cert-date-badge">Mar 2025</span></div>
+          <h3 class="cert-name">Data Visualisation: Empowering Business with Effective Insights</h3>
+          <p class="cert-desc">Framing business scenarios, choosing the right visuals, creating effective charts, and communicating actionable insights to senior stakeholders.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-tata-dataviz.jpg" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="ai" data-title="Data Science Job Simulation — British Airways" data-file="certificates/cert-british-airways-ds.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-british-airways-ds.jpg" alt="British Airways Data Science Certificate" loading="lazy" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag forage">British Airways x Forage</span><span class="cert-date-badge">Mar 2025</span></div>
+          <h3 class="cert-name">Data Science Job Simulation</h3>
+          <p class="cert-desc">Real-world tasks including web scraping for company insights and predicting customer buying behaviour for British Airways via Forage.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-british-airways-ds.jpg" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="ai" data-title="Generative AI — Infosys" data-file="certificates/cert-infosys-genai.pdf" data-type="pdf">
+        <div class="cert-preview-pdf"><div class="pdf-icon">🤖</div><div class="pdf-label">Infosys Springboard</div></div>
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag infosys">Infosys</span><span class="cert-date-badge">2025</span></div>
+          <h3 class="cert-name">Generative AI</h3>
+          <p class="cert-desc">Generative AI foundations, large language models, prompt engineering, and real-world GenAI applications via Infosys Springboard platform.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-infosys-genai.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="cyber" data-title="Cyber Internship — Deloitte" data-file="certificates/cert-deloitte-cyber.pdf" data-type="pdf">
+        <div class="cert-preview-pdf"><div class="pdf-icon">🔐</div><div class="pdf-label">Deloitte</div></div>
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag deloitte">Deloitte</span><span class="cert-date-badge">2025</span></div>
+          <h3 class="cert-name">Cyber Internship Program</h3>
+          <p class="cert-desc">Big 4 cybersecurity virtual internship covering threat identification, security analysis, and enterprise-level cyber risk management frameworks.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-deloitte-cyber.pdf" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="ai" data-title="AI for Beginners — HP LIFE" data-file="certificates/cert-hp-ai.jpg" data-type="img">
+        <img class="cert-preview" src="certificates/cert-hp-ai.jpg" alt="HP LIFE AI for Beginners Certificate" loading="lazy" />
+        <div class="cert-body">
+          <div class="cert-issuer-row"><span class="cert-issuer-tag hp">HP Foundation</span><span class="cert-date-badge">Nov 2024</span></div>
+          <h3 class="cert-name">AI for Beginners</h3>
+          <p class="cert-desc">HP LIFE certification covering foundational AI concepts, machine learning applications, ethical implications, and AI impact on modern businesses.</p>
+          <div class="cert-actions">
+            <button class="cert-btn cert-btn-view" onclick="openCertLightbox(this.closest('.cert-card'))">👁 View</button>
+            <a class="cert-btn cert-btn-dl" href="certificates/cert-hp-ai.jpg" download>⬇ Download</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="cert-lightbox" id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <div class="cert-lightbox-inner">
+      <img class="cert-lightbox-img" id="cert-lightbox-img" src="" alt="" style="display:none;" />
+      <div id="cert-lightbox-pdf-wrap" style="display:none;width:100%;height:70vh;background:#0a0e1a;">
+        <embed id="cert-lightbox-embed" src="" type="application/pdf" width="100%" height="100%" />
+      </div>
+      <div class="cert-lightbox-bar">
+        <span class="cert-lightbox-title" id="cert-lightbox-title"></span>
+        <button class="cert-lightbox-close" id="cert-lightbox-close">x Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-copy">2025 Goutham Kumar SK. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const filterBtns = document.querySelectorAll('.cert-filter-btn');
+    const certCards  = document.querySelectorAll('.cert-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        certCards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+    const lightbox  = document.getElementById('cert-lightbox');
+    const lbImg     = document.getElementById('cert-lightbox-img');
+    const lbPdfWrap = document.getElementById('cert-lightbox-pdf-wrap');
+    const lbEmbed   = document.getElementById('cert-lightbox-embed');
+    const lbTitle   = document.getElementById('cert-lightbox-title');
+    const lbClose   = document.getElementById('cert-lightbox-close');
+    function openCertLightbox(card) {
+      lbTitle.textContent = card.dataset.title;
+      if (card.dataset.type === 'img') {
+        lbImg.src = card.dataset.file; lbImg.alt = card.dataset.title;
+        lbImg.style.display = 'block'; lbPdfWrap.style.display = 'none';
+      } else {
+        lbEmbed.src = card.dataset.file;
+        lbImg.style.display = 'none'; lbPdfWrap.style.display = 'block';
+      }
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = ''; lbEmbed.src = '';
+    }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
