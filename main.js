@@ -554,6 +554,25 @@
     });
   });
 
+  // ─── AUTO-SELECT PACKAGE FROM URL QUERY PARAMS ───
+  (function handleUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      const selectEl = document.getElementById('contact-service');
+      if (selectEl) {
+        const matchingOption = Array.from(selectEl.options).find(opt => opt.value === serviceParam);
+        if (matchingOption) {
+          selectEl.value = serviceParam;
+          const subjectEl = document.getElementById('contact-subject');
+          if (subjectEl && !subjectEl.value) {
+            subjectEl.value = `Inquiry: ${matchingOption.text.replace(/^[^\w\s]+/, '').trim()}`;
+          }
+        }
+      }
+    }
+  })();
+
   // ─── FOOTER YEAR ──────────────────────────────
   document.querySelectorAll('.footer-year').forEach(el => {
     el.textContent = new Date().getFullYear();
