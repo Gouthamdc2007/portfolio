@@ -391,25 +391,48 @@
   }
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn  = form.querySelector('.form-btn');
       const orig = btn.innerHTML;
-      btn.innerHTML = '<span>Transmitting...</span>';
+      btn.innerHTML = '<span>Transmitting to Inbox...</span>';
       btn.disabled = true;
       playClickSound('button');
 
-      setTimeout(() => {
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((val, key) => { data[key] = val; });
+      data['_subject'] = `New Portfolio Inquiry from ${data.name || 'Client'}: ${data.subject || 'Opportunity'}`;
+
+      try {
+        await fetch('https://formsubmit.co/ajax/gowtham57845@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
         form.reset();
         if (charCount) charCount.textContent = '0 / 1000';
         btn.innerHTML = orig;
         btn.disabled = false;
+
         if (successMsg) {
           successMsg.style.display = 'block';
           playProfileSound();
-          setTimeout(() => successMsg.style.display = 'none', 7000);
+          setTimeout(() => { successMsg.style.display = 'none'; }, 9000);
         }
-      }, 1100);
+      } catch (err) {
+        // Fallback: standard form POST if fetch is intercepted
+        try {
+          form.submit();
+        } catch (e2) {
+          btn.innerHTML = orig;
+          btn.disabled = false;
+        }
+      }
     });
   }
 
