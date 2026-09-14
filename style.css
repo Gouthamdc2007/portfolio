@@ -3944,3 +3944,311 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================================================
+   27. RECRUITER 30-SECOND QUICK-SCAN HUD
+   ================================================================ */
+.recruiter-hud-banner {
+  background: linear-gradient(135deg, rgba(10, 20, 42, 0.9) 0%, rgba(4, 9, 24, 0.96) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  border: 1.5px solid rgba(0, 242, 254, 0.35);
+  border-radius: var(--radius-m);
+  padding: var(--s4);
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 242, 254, 0.15);
+  margin-top: var(--s3);
+  margin-bottom: var(--s4);
+  position: relative;
+  overflow: hidden;
+}
+
+.recruiter-hud-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, #38bdf8 50%, var(--accent-indigo) 100%);
+}
+
+.recruiter-hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: var(--s3);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.recruiter-hud-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.recruiter-hud-title::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseMailBadge 1.8s infinite;
+}
+
+.recruiter-hud-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px 12px;
+  border-radius: var(--radius-x);
+}
+
+.recruiter-hud-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.recruiter-hud-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-s);
+  padding: 12px 16px;
+  transition: all 0.3s var(--ease);
+}
+
+.recruiter-hud-card:hover {
+  background: rgba(0, 242, 254, 0.05);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.recruiter-hud-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.recruiter-hud-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.45;
+}
+
+.recruiter-hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 700;
+  border-radius: var(--radius-x);
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+
+.hud-btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #38bdf8 100%);
+  color: #030712;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+.hud-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+  color: #030712;
+}
+
+.hud-btn-outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.hud-btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   28. SKILLS-TO-PROOF MATRIX TABLE
+   ================================================================ */
+.proof-matrix-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: var(--radius-m);
+  background: linear-gradient(135deg, rgba(13, 22, 48, 0.65) 0%, rgba(7, 13, 28, 0.88) 100%);
+  backdrop-filter: blur(20px);
+  margin-top: var(--s4);
+  box-shadow: var(--glow-box);
+}
+
+.proof-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 780px;
+}
+
+.proof-matrix-table th {
+  background: rgba(10, 18, 38, 0.9);
+  padding: 16px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.proof-matrix-table td {
+  padding: 16px 20px;
+  font-size: 0.88rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.proof-matrix-table tr:hover td {
+  background: rgba(0, 242, 254, 0.03);
+}
+
+.matrix-skill-name {
+  font-weight: 700;
+  color: var(--text-bright);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.matrix-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--radius-x);
+}
+
+/* ================================================================
+   29. ENGINEERING CASE STUDY PILLS & ARCHITECTURE
+   ================================================================ */
+.case-study-box {
+  background: rgba(4, 9, 24, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: var(--radius-s);
+  padding: 14px 16px;
+  margin-top: 12px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-study-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.case-study-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.case-study-desc {
+  color: #cbd5e1;
+}
+
+/* ================================================================
+   30. STAR INTERNSHIP BREAKDOWN CARD
+   ================================================================ */
+.star-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.star-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-s);
+  padding: 12px 14px;
+}
+
+.star-cell-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star-cell-desc {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .recruiter-hud-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .star-breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .recruiter-hud-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-study-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
